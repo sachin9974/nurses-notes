@@ -5,170 +5,194 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Medical Terminology | Nurses Notes</title>
+<link rel="stylesheet" href="style.css">
 
 <style>
-* {
-  box-sizing: border-box;
+.subject-page {
+  max-width: 1100px;
+  margin: 45px auto;
+  padding: 20px;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f3f6fb;
-  color: #263445;
+.subject-hero {
+  background: #eaf5f5;
+  padding: 35px;
+  border-radius: 18px;
+  margin-bottom: 30px;
+}
+
+.subject-hero h1 {
+  color: #087f83;
+  margin: 10px 0;
+}
+
+.subject-hero p {
   line-height: 1.7;
+  color: #455;
 }
 
-/* Website Header */
-.brand-header {
-  background: #1769aa;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 15px;
-  padding: 10px 20px;
-  text-align: left;
-}
-
-.brand-header .site-logo {
-  width: 180px;
-  height: 180px;
-  max-width: 180px;
-  max-height: 180px;
-  object-fit: contain;
-  display: block;
-  margin: 0;
-  flex-shrink: 0;
-}
-
-.brand-header h1 {
-  color: white;
-  margin: 0;
-  font-size: 28px;
-}
-
-/* Main Content */
-.container {
-  max-width: 950px;
-  margin: 25px auto;
-  padding: 15px;
-}
-
-.card {
-  background: white;
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-}
-
-h2, h3 {
-  color: #1769aa;
-}
-
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 25px;
-}
-
-.btn {
+.back-link {
   display: inline-block;
-  padding: 11px 17px;
-  background: #1769aa;
-  color: white;
+  margin-bottom: 20px;
+  color: #087f83;
   text-decoration: none;
-  border: none;
-  border-radius: 7px;
-  cursor: pointer;
-  font-size: 15px;
 }
 
-.btn.green {
-  background: #16834a;
+.chapter-search {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 15px 0 25px;
+  font-size: 16px;
 }
 
-.btn.orange {
-  background: #d97706;
+.chapter-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.chapter-card {
+  display: block;
+  text-decoration: none;
+  color: #234;
+  background: white;
+  border: 1px solid #e5eeee;
+  border-radius: 13px;
+  padding: 20px;
+  transition: .2s;
+}
+
+.chapter-card:hover {
+  transform: translateY(-3px);
+  border-color: #078b8b;
+  box-shadow: 0 5px 18px #0001;
+}
+
+.chapter-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #087f83;
+}
+
+.chapter-card span {
+  font-size: 14px;
+  color: #667;
+}
+
+.content-section {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  margin-top: 30px;
+  border: 1px solid #e5eeee;
+}
+
+.content-section h2,
+.content-section h3 {
+  color: #087f83;
 }
 
 .topic {
   padding: 15px 0;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5eeee;
 }
 
 .term {
-  color: #1769aa;
+  color: #087f83;
   font-weight: bold;
 }
 
-.back {
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.action-btn {
   display: inline-block;
-  margin-top: 25px;
-  color: #1769aa;
+  padding: 12px 18px;
+  background: #087f83;
+  color: white;
   text-decoration: none;
-  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #64748b;
+.action-btn.download {
+  background: #16834a;
 }
 
-/* Mobile Responsive */
-@media(max-width: 600px) {
-  .brand-header {
-    gap: 10px;
-    padding: 10px;
+.action-btn.print {
+  background: #d97706;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+th, td {
+  border: 1px solid #dce7e7;
+  padding: 11px;
+  text-align: left;
+}
+
+th {
+  background: #eaf5f5;
+  color: #087f83;
+}
+
+@media(max-width:600px) {
+  .subject-page {
+    margin: 20px auto;
+    padding: 12px;
   }
 
-  .brand-header .site-logo {
-    width: 100px;
-    height: 100px;
-    max-width: 100px;
-    max-height: 100px;
+  .subject-hero {
+    padding: 22px;
   }
 
-  .brand-header h1 {
-    font-size: 23px;
-  }
-
-  .card {
+  .content-section {
     padding: 16px;
   }
+
+  .action-btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 
-/* Print Settings */
 @media print {
+  .topbar,
+  .back-link,
+  .chapter-search,
+  .chapter-list,
+  .action-buttons,
+  footer {
+    display: none !important;
+  }
+
   body {
     background: white;
     color: black;
   }
 
-  .brand-header {
-    background: white;
-    color: black;
-    border-bottom: 2px solid black;
-  }
-
-  .brand-header h1 {
-    color: black;
-  }
-
-  .buttons, .back, footer {
-    display: none !important;
-  }
-
-  .card {
-    box-shadow: none;
-    padding: 0;
-  }
-
-  .container {
+  .subject-page {
     margin: 0;
     padding: 0;
+  }
+
+  .subject-hero,
+  .content-section {
+    background: white;
+    box-shadow: none;
+    border: none;
   }
 
   .topic {
@@ -180,53 +204,101 @@ footer {
 
 <body>
 
-<!-- Website Header -->
-<header class="brand-header">
-  <img src="nurses-notes-logo.png"
-       alt="Nurses Notes Logo"
-       class="site-logo">
-
-  <h1>Nurses Notes</h1>
+<header class="topbar">
+<a class="brand" href="index.html">
+<span class="brandmark">✚</span>
+<span>Nurses <b>Notes</b>
+<small>LEARN • PRACTISE • GROW</small></span>
+</a>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-<div class="card">
+<main class="subject-page">
 
-<h2>Medical Terminology – Read Online</h2>
+<a href="index.html" class="back-link">← Back to Home</a>
 
-<p>
-Medical terminology is the language used by healthcare professionals
-to describe the human body, diseases, medical conditions, investigations
-and treatments.
-</p>
+<section class="subject-hero">
+<span>GNM • NURSING EDUCATION</span>
+<h1>Medical Terminology</h1>
+<p>Learn the language of healthcare through simple explanations, medical prefixes, suffixes, root words and commonly used medical terms.</p>
+</section>
 
-<div class="buttons">
+<div class="action-buttons">
+<a class="action-btn download"
+href="medical-terminology.pdf" download>
+Download Original PDF
+</a>
 
-  <a class="btn green"
-     href="medical-terminology.pdf"
-     download>
-     Download Original PDF
-  </a>
+<button class="action-btn print" onclick="window.print()">
+Print / Save as PDF
+</button>
+</div>
 
-  <button class="btn orange" onclick="window.print()">
-    Print / Save as PDF
-  </button>
+<h2>Chapter List</h2>
+<p>Explore the topics below to begin learning.</p>
+
+<input type="search"
+id="chapterSearch"
+class="chapter-search"
+placeholder="Search medical terminology topics...">
+
+<div class="chapter-list" id="chapterList">
+
+<a class="chapter-card" href="#chapter1">
+<strong>01. Introduction to Medical Terminology</strong>
+<span>Definition, importance and basic concepts.</span>
+</a>
+
+<a class="chapter-card" href="#chapter2">
+<strong>02. Basic Word Components</strong>
+<span>Prefix, root word, suffix and combining vowels.</span>
+</a>
+
+<a class="chapter-card" href="#chapter3">
+<strong>03. Common Medical Prefixes</strong>
+<span>Common prefixes with meanings and examples.</span>
+</a>
+
+<a class="chapter-card" href="#chapter4">
+<strong>04. Common Medical Suffixes</strong>
+<span>Suffixes used in medical terms.</span>
+</a>
+
+<a class="chapter-card" href="#chapter5">
+<strong>05. Medical Root Words</strong>
+<span>Common roots related to body organs and systems.</span>
+</a>
+
+<a class="chapter-card" href="#chapter6">
+<strong>06. Examples of Medical Terms</strong>
+<span>Understand commonly used medical words.</span>
+</a>
+
+<a class="chapter-card" href="#chapter7">
+<strong>07. Nursing Importance</strong>
+<span>Use of medical terminology in nursing practice.</span>
+</a>
 
 </div>
 
-<h2>Chapter 1: Introduction to Medical Terminology</h2>
+<p id="noResults" hidden>No matching topics found.</p>
+
+<!-- ONLINE READING CONTENT -->
+
+<section class="content-section" id="chapter1">
+
+<h2>01. Introduction to Medical Terminology</h2>
 
 <div class="topic">
-<h3>1. Definition</h3>
+<h3>Definition</h3>
 <p>
-Medical terminology is a system of words used to communicate
-accurately about health, diseases, body structures and medical care.
+Medical terminology is a system of words used by healthcare professionals
+to communicate accurately about health, diseases, body structures,
+medical conditions and patient care.
 </p>
 </div>
 
 <div class="topic">
-<h3>2. Importance of Medical Terminology</h3>
+<h3>Importance of Medical Terminology</h3>
 <ul>
 <li>Helps healthcare professionals communicate clearly.</li>
 <li>Improves understanding of medical records.</li>
@@ -236,43 +308,79 @@ accurately about health, diseases, body structures and medical care.
 </ul>
 </div>
 
-<div class="topic">
-<h3>3. Basic Word Components</h3>
+</section>
 
-<p><span class="term">Prefix:</span>
-A word part placed at the beginning of a medical term.</p>
+<section class="content-section" id="chapter2">
+
+<h2>02. Basic Word Components</h2>
+
+<div class="topic">
+<h3>Prefix</h3>
+<p>A word part placed at the beginning of a medical term.</p>
 <p>Example: Hyper- means excessive or above normal.</p>
+</div>
 
-<p><span class="term">Root Word:</span>
-The main part that gives the basic meaning of a medical term.</p>
+<div class="topic">
+<h3>Root Word</h3>
+<p>The main part that gives the basic meaning of a medical term.</p>
 <p>Example: Cardi means heart.</p>
+</div>
 
-<p><span class="term">Suffix:</span>
-A word part placed at the end of a medical term.</p>
+<div class="topic">
+<h3>Suffix</h3>
+<p>A word part placed at the end of a medical term.</p>
 <p>Example: -itis means inflammation.</p>
-
-<p><span class="term">Combining Vowel:</span>
-A vowel, usually 'o', used to connect word parts.</p>
 </div>
 
 <div class="topic">
-<h3>4. Common Medical Prefixes</h3>
-<ul>
-<li>Hyper- : Excessive or high</li>
-<li>Hypo- : Low or below normal</li>
-<li>Brady- : Slow</li>
-<li>Tachy- : Fast</li>
-<li>Anti- : Against</li>
-<li>Pre- : Before</li>
-<li>Post- : After</li>
-<li>Sub- : Below</li>
-<li>Intra- : Within</li>
-<li>Inter- : Between</li>
-</ul>
+<h3>Combining Vowel</h3>
+<p>A vowel, usually 'o', used to connect word parts.</p>
 </div>
 
-<div class="topic">
-<h3>5. Common Medical Suffixes</h3>
+</section>
+
+<section class="content-section" id="chapter3">
+
+<h2>03. Common Medical Prefixes</h2>
+
+<table>
+<tr>
+<th>Prefix</th>
+<th>Meaning</th>
+</tr>
+<tr><td>a- / an-</td><td>Without or absence of</td></tr>
+<tr><td>anti-</td><td>Against</td></tr>
+<tr><td>brady-</td><td>Slow</td></tr>
+<tr><td>dys-</td><td>Abnormal, difficult or painful</td></tr>
+<tr><td>endo-</td><td>Within</td></tr>
+<tr><td>epi-</td><td>Upon or above</td></tr>
+<tr><td>hyper-</td><td>Excessive or high</td></tr>
+<tr><td>hypo-</td><td>Low or below normal</td></tr>
+<tr><td>inter-</td><td>Between</td></tr>
+<tr><td>intra-</td><td>Within</td></tr>
+<tr><td>macro-</td><td>Large</td></tr>
+<tr><td>micro-</td><td>Small</td></tr>
+<tr><td>mono-</td><td>One</td></tr>
+<tr><td>multi-</td><td>Many</td></tr>
+<tr><td>neo-</td><td>New</td></tr>
+<tr><td>peri-</td><td>Around</td></tr>
+<tr><td>poly-</td><td>Many or much</td></tr>
+<tr><td>post-</td><td>After</td></tr>
+<tr><td>pre-</td><td>Before</td></tr>
+<tr><td>sub-</td><td>Below</td></tr>
+<tr><td>tachy-</td><td>Fast</td></tr>
+<tr><td>trans-</td><td>Across or through</td></tr>
+<tr><td>uni-</td><td>One</td></tr>
+<tr><td>bi-</td><td>Two</td></tr>
+<tr><td>hemi-</td><td>Half</td></tr>
+</table>
+
+</section>
+
+<section class="content-section" id="chapter4">
+
+<h2>04. Common Medical Suffixes</h2>
+
 <ul>
 <li>-itis : Inflammation</li>
 <li>-ectomy : Surgical removal</li>
@@ -285,10 +393,13 @@ A vowel, usually 'o', used to connect word parts.</p>
 <li>-oma : Tumour or mass</li>
 <li>-pathy : Disease</li>
 </ul>
-</div>
 
-<div class="topic">
-<h3>6. Common Medical Root Words</h3>
+</section>
+
+<section class="content-section" id="chapter5">
+
+<h2>05. Common Medical Root Words</h2>
+
 <ul>
 <li>Cardi : Heart</li>
 <li>Nephr : Kidney</li>
@@ -301,10 +412,13 @@ A vowel, usually 'o', used to connect word parts.</p>
 <li>Rhin : Nose</li>
 <li>Ophthalm : Eye</li>
 </ul>
-</div>
 
-<div class="topic">
-<h3>7. Examples of Medical Terms</h3>
+</section>
+
+<section class="content-section" id="chapter6">
+
+<h2>06. Examples of Medical Terms</h2>
+
 <ul>
 <li>Cardiology – Study of the heart.</li>
 <li>Dermatitis – Inflammation of the skin.</li>
@@ -313,10 +427,13 @@ A vowel, usually 'o', used to connect word parts.</p>
 <li>Bradycardia – Abnormally slow heart rate.</li>
 <li>Gastrectomy – Surgical removal of all or part of the stomach.</li>
 </ul>
-</div>
 
-<div class="topic">
-<h3>8. Nursing Importance</h3>
+</section>
+
+<section class="content-section" id="chapter7">
+
+<h2>07. Nursing Importance</h2>
+
 <ul>
 <li>Understand doctors' instructions.</li>
 <li>Read and interpret patient records.</li>
@@ -324,9 +441,9 @@ A vowel, usually 'o', used to connect word parts.</p>
 <li>Communicate effectively with healthcare teams.</li>
 <li>Understand investigations and treatment procedures.</li>
 </ul>
-</div>
 
-<h2>Quick Revision</h2>
+<h3>Quick Revision</h3>
+
 <ul>
 <li>Prefix = Beginning of a word.</li>
 <li>Root = Main meaning.</li>
@@ -336,14 +453,34 @@ A vowel, usually 'o', used to connect word parts.</p>
 <li>-ectomy = Surgical removal.</li>
 </ul>
 
-<a class="back" href="index.html">← Back to Home</a>
+</section>
 
-</div>
-</div>
+<a href="index.html" class="back-link">← Back to Home</a>
+
+</main>
 
 <footer>
-© Nurses Notes
+<p>© 2026 Nurses Notes. Learn responsibly. Care compassionately.</p>
 </footer>
+
+<script>
+const search = document.getElementById("chapterSearch");
+const cards = document.querySelectorAll(".chapter-card");
+const noResults = document.getElementById("noResults");
+
+search.addEventListener("input", function() {
+  let count = 0;
+  const value = this.value.toLowerCase();
+
+  cards.forEach(card => {
+    const match = card.textContent.toLowerCase().includes(value);
+    card.style.display = match ? "block" : "none";
+    if (match) count++;
+  });
+
+  noResults.hidden = count !== 0;
+});
+</script>
 
 </body>
 </html>
