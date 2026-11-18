@@ -3,156 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chapter 1 Introduction to Anatomy and Physiology - Complete nursing study notes by Nurses Notes.">
 <title>Chapter 1 - Introduction to Anatomy and Physiology | Nurses Notes</title>
+
+<link rel="stylesheet" href="style.css">
 
 <style>
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
+  background: #f7fafa;
+  color: #344054;
   font-family: Arial, sans-serif;
-  background: #f4f7fb;
-  color: #263449;
   line-height: 1.75;
 }
 
-header {
-  background: #123b70;
-  color: white;
-  padding: 22px 6%;
+.chapter-page {
+  max-width: 1050px;
+  margin: auto;
+  padding: 25px 18px 45px;
 }
 
-header h2 {
-  font-size: 24px;
-}
-
-header p {
-  color: #dceaff;
-  font-size: 13px;
-}
-
-nav {
-  background: white;
-  padding: 13px 6%;
-  border-bottom: 1px solid #e1e7ef;
-}
-
-nav a {
-  color: #1763ad;
+.back-link {
+  display: inline-block;
+  color: #087f83;
   text-decoration: none;
   font-weight: bold;
+  margin-bottom: 18px;
 }
 
-.container {
-  max-width: 950px;
-  margin: 25px auto;
-  padding: 0 16px;
-}
-
-.hero {
-  background: linear-gradient(135deg, #123b70, #287bc0);
-  color: white;
-  padding: 35px 25px;
-  border-radius: 14px;
+.chapter-hero {
+  background: #eaf5f5;
+  padding: 35px 28px;
+  border-radius: 15px;
   margin-bottom: 25px;
 }
 
-.hero small {
-  color: #d6eaff;
+.chapter-hero small {
+  color: #087f83;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
-.hero h1 {
-  font-size: 29px;
-  line-height: 1.3;
+.chapter-hero h1 {
+  color: #087f83;
+  font-size: 30px;
+  line-height: 1.35;
   margin: 10px 0;
 }
 
-.hero p {
-  color: #e4efff;
+.chapter-hero p {
+  color: #52636b;
+  margin: 0;
 }
 
-.section {
+.chapter-card {
   background: white;
-  padding: 24px;
+  padding: 25px;
   margin-bottom: 18px;
+  border: 1px solid #e5eeee;
   border-radius: 12px;
-  border: 1px solid #e5eaf1;
+  box-shadow: 0 2px 8px rgba(0,0,0,.025);
 }
 
-h2 {
-  color: #164d85;
+.chapter-card h2 {
+  color: #087f83;
   font-size: 21px;
-  margin-bottom: 12px;
+  margin: 0 0 14px;
 }
 
-h3 {
-  color: #245c91;
-  margin: 15px 0 7px;
+.chapter-card h3 {
+  color: #087f83;
+  font-size: 17px;
+  margin: 17px 0 8px;
 }
 
-p {
-  margin-bottom: 10px;
+.chapter-card p {
+  margin-bottom: 11px;
 }
 
-ul, ol {
+.chapter-card ul,
+.chapter-card ol {
   padding-left: 23px;
   margin: 10px 0;
 }
 
-li {
+.chapter-card li {
   margin-bottom: 7px;
 }
 
 .definition {
-  background: #edf5ff;
-  border-left: 4px solid #2476bd;
+  background: #eaf5f5;
+  border-left: 4px solid #087f83;
   padding: 15px;
-  border-radius: 6px;
-  margin: 12px 0;
+  border-radius: 7px;
+  margin: 13px 0;
 }
 
 .example {
-  color: #27734b;
+  color: #087f83;
   font-weight: bold;
 }
 
-table {
+.chapter-card table {
   width: 100%;
   border-collapse: collapse;
-  margin: 14px 0;
+  margin: 15px 0;
   font-size: 14px;
 }
 
-th, td {
-  border: 1px solid #dce4ed;
+.chapter-card th,
+.chapter-card td {
+  border: 1px solid #dce8e8;
   padding: 11px;
   text-align: left;
 }
 
-th {
-  background: #eaf2fc;
-  color: #164d85;
+.chapter-card th {
+  background: #eaf5f5;
+  color: #087f83;
 }
 
 .diagram {
-  background: #f0f6ff;
+  background: #f0f8f8;
   padding: 18px;
   border-radius: 10px;
   text-align: center;
   margin: 15px 0;
   font-weight: bold;
-  color: #164d85;
+  color: #087f83;
 }
 
 .diagram div {
   margin: 7px auto;
-  padding: 9px;
+  padding: 10px;
   background: white;
-  border: 1px solid #b9d0e9;
+  border: 1px solid #c8e1e1;
   border-radius: 7px;
   max-width: 330px;
 }
@@ -161,26 +149,54 @@ th {
   background: #fff8e8;
   padding: 15px;
   border-left: 4px solid #e4a52a;
-  border-radius: 6px;
-  margin: 12px 0;
+  border-radius: 7px;
+  margin: 13px 0;
 }
 
-footer {
+.chapter-complete {
   text-align: center;
-  padding: 25px;
-  color: #68778b;
-  font-size: 13px;
+  background: #eaf5f5;
 }
 
-@media(max-width:600px) {
-  .hero h1 {
-    font-size: 23px;
+.chapter-complete a {
+  display: inline-block;
+  margin-top: 12px;
+  background: #087f83;
+  color: white;
+  padding: 11px 19px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media(max-width: 600px) {
+  .chapter-page {
+    padding: 18px 13px 35px;
   }
-  .section {
-    padding: 17px;
+
+  .chapter-hero {
+    padding: 25px 19px;
   }
-  table {
+
+  .chapter-hero h1 {
+    font-size: 24px;
+  }
+
+  .chapter-card {
+    padding: 18px;
+  }
+
+  .chapter-card h2 {
+    font-size: 19px;
+  }
+
+  .chapter-card table {
     font-size: 12px;
+  }
+
+  .chapter-card th,
+  .chapter-card td {
+    padding: 8px;
   }
 }
 </style>
@@ -188,32 +204,34 @@ footer {
 
 <body>
 
-<header>
-  <h2>📘 Nurses Notes</h2>
-  <p>Nursing Education and Study Resources</p>
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <span class="brandmark">✚</span>
+    <span>Nurses <b>Notes</b>
+      <small>LEARN • PRACTISE • GROW</small>
+    </span>
+  </a>
 </header>
 
-<nav>
-  <a href="index.html">Home</a> /
-  <a href="anatomy-physiology.html">Anatomy & Physiology</a> /
-  Chapter 1
-</nav>
+<main class="chapter-page">
 
-<main class="container">
+<a class="back-link" href="anatomy-physiology.html">
+  ← Back to Anatomy & Physiology
+</a>
 
-<div class="hero">
+<div class="chapter-hero">
   <small>ANATOMY & PHYSIOLOGY • CHAPTER 01</small>
   <h1>Introduction to Anatomy and Physiology</h1>
   <p>Complete nursing study notes in simple English.</p>
 </div>
 
-<section class="section">
+<section class="chapter-card">
 <h2>1. Introduction</h2>
 <p>The human body is a complex living structure made up of cells, tissues, organs and organ systems. All these structures work together to maintain life.</p>
 <p>Anatomy and Physiology are two basic subjects of medical and nursing science. They help nurses understand the structure and functions of the human body.</p>
 </section>
 
-<section class="section">
+<section class="chapter-card">
 <h2>2. Definition of Anatomy</h2>
 <div class="definition">
 <strong>Anatomy</strong> is the branch of science that deals with the study of the structure, shape, size, location and relationship of different parts of the human body.
@@ -221,7 +239,7 @@ footer {
 <p class="example">Example: Studying the structure of the heart, lungs, brain and kidneys.</p>
 </section>
 
-<section class="section">
+<section class="chapter-card">
 <h2>3. Definition of Physiology</h2>
 <div class="definition">
 <strong>Physiology</strong> is the branch of science that deals with the study of the normal functions and activities of different parts of the human body.
@@ -229,7 +247,7 @@ footer {
 <p class="example">Example: Studying how the heart pumps blood and how the lungs exchange gases.</p>
 </section>
 
-<section class="section">
+<section class="chapter-card">
 <h2>4. Difference Between Anatomy and Physiology</h2>
 <table>
 <tr><th>Anatomy</th><th>Physiology</th></tr>
@@ -240,7 +258,7 @@ footer {
 </table>
 </section>
 
-<section class="section">
+<section class="chapter-card">
 <h2>5. Branches of Anatomy</h2>
 <ol>
 <li><strong>Gross Anatomy:</strong> Study of body structures visible to the naked eye.</li>
@@ -254,7 +272,7 @@ footer {
 </ol>
 </section>
 
-<section class="section">
+<section class="chapter-card">
 <h2>6. Branches of Physiology</h2>
 <ol>
 <li><strong>Cell Physiology:</strong> Study of normal functions of cells.</li>
@@ -268,7 +286,7 @@ footer {
 </ol>
 </section>
 
-<section class="section">
+<section class="chapter-card">
 <h2>7. Levels of Body Organization</h2>
 <p>The human body is organized into six major levels.</p>
 <div class="diagram">
@@ -294,7 +312,7 @@ footer {
 </ol>
 </section>
 
-<section class="section">
+<section class="chapter-card">
 <h2>8. Four Basic Types of Tissues</h2>
 <table>
 <tr><th>Tissue</th><th>Main Function</th><th>Example</th></tr>
@@ -305,7 +323,7 @@ footer {
 </table>
 </section>
 
-<section class="section">
+<section class="chapter-card">
 <h2>9. Anatomical Position</h2>
 <p>The anatomical position is the standard reference position used to describe the location of body parts.</p>
 <ul>
@@ -318,7 +336,7 @@ footer {
 <div class="note">Remember: Anatomical position is the standard reference position in anatomy.</div>
 </section>
 
-<section class="section">
+<section class="chapter-card">
 <h2>10. Important Anatomical Terms</h2>
 <table>
 <tr><th>Term</th><th>Meaning</th></tr>
@@ -335,7 +353,7 @@ footer {
 </table>
 </section>
 
-<section class="section">
+<section class="chapter-card">
 <h2>11. Body Planes</h2>
 <ol>
 <li><strong>Sagittal Plane:</strong> Divides the body into right and left parts.</li>
@@ -349,7 +367,7 @@ footer {
 </div>
 </section>
 
-<section class="section">
+<section class="chapter-card">
 <h2>12. Major Body Cavities</h2>
 <h3>A. Dorsal Body Cavity</h3>
 <ul>
@@ -364,7 +382,7 @@ footer {
 </ul>
 </section>
 
-<section class="section">
+<section class="chapter-card">
 <h2>13. Homeostasis</h2>
 <div class="definition">
 <strong>Homeostasis</strong> is the ability of the body to maintain a relatively stable internal environment despite changes inside or outside the body.
@@ -381,7 +399,7 @@ footer {
 <p class="example">Example: When body temperature increases, sweating helps cool the body.</p>
 </section>
 
-<section class="section">
+<section class="chapter-card">
 <h2>14. Importance of Anatomy and Physiology in Nursing</h2>
 <ol>
 <li>Helps nurses understand normal body structure and function.</li>
@@ -395,7 +413,7 @@ footer {
 </ol>
 </section>
 
-<section class="section">
+<section class="chapter-card">
 <h2>15. Quick Revision</h2>
 <ul>
 <li>Anatomy = Study of structure.</li>
@@ -410,7 +428,7 @@ footer {
 </ul>
 </section>
 
-<section class="section">
+<section class="chapter-card">
 <h2>16. Important Exam Topics</h2>
 <ol>
 <li>Define Anatomy and Physiology.</li>
@@ -426,17 +444,16 @@ footer {
 </ol>
 </section>
 
-<div class="section">
+<section class="chapter-card chapter-complete">
 <h2>Chapter Completed</h2>
 <p>You have completed Chapter 1: Introduction to Anatomy and Physiology.</p>
-<a href="anatomy-physiology.html" style="color:#1763ad;font-weight:bold;">← Back to Anatomy & Physiology</a>
-</div>
+<a href="anatomy-physiology.html">← Back to Anatomy & Physiology</a>
+</section>
 
 </main>
 
 <footer>
-<p>© Nurses Notes | Nursing Education</p>
-<p>For educational purposes only.</p>
+<p>© 2026 Nurses Notes. Learn responsibly. Care compassionately.</p>
 </footer>
 
 </body>
