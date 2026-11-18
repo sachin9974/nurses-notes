@@ -3,176 +3,357 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Normal Values in Nursing | Nurses Notes</title>
+<link rel="stylesheet" href="style.css">
 
 <style>
-* {
-    box-sizing: border-box;
+.subject-page {
+  max-width: 1100px;
+  margin: 45px auto;
+  padding: 20px;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f7fb;
-    color: #263445;
-    line-height: 1.6;
+.subject-hero {
+  background: #eaf5f5;
+  padding: 35px;
+  border-radius: 18px;
+  margin-bottom: 30px;
 }
 
-header {
-    background: #0756a5;
-    color: white;
-    padding: 24px 15px;
-    text-align: center;
+.subject-hero h1 {
+  color: #087f83;
+  margin: 10px 0;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 27px;
+.subject-hero p {
+  line-height: 1.7;
+  color: #455;
 }
 
-header p {
-    margin: 6px 0 0;
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #087f83;
+  text-decoration: none;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 15px;
+.chapter-search {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 15px 0 25px;
+  font-size: 16px;
 }
 
-.card {
-    background: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+.chapter-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
 }
 
-h2 {
-    color: #0756a5;
-    border-bottom: 2px solid #dce9f7;
-    padding-bottom: 8px;
-    margin-top: 0;
+.chapter-card {
+  display: block;
+  text-decoration: none;
+  color: #234;
+  background: white;
+  border: 1px solid #e5eeee;
+  border-radius: 13px;
+  padding: 20px;
+  transition: .2s;
 }
 
-h3 {
-    color: #174d80;
+.chapter-card:hover {
+  transform: translateY(-3px);
+  border-color: #078b8b;
+  box-shadow: 0 5px 18px #0001;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 12px 0;
-    font-size: 14px;
+.chapter-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #087f83;
 }
 
-th {
-    background: #0756a5;
-    color: white;
-    text-align: left;
+.chapter-card span {
+  font-size: 14px;
+  color: #667;
 }
 
-th, td {
-    padding: 11px;
-    border: 1px solid #dce2e9;
+.content-section {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  margin-top: 30px;
+  border: 1px solid #e5eeee;
+  scroll-margin-top: 20px;
 }
 
-tr:nth-child(even) {
-    background: #f2f7fc;
+.content-section h2,
+.content-section h3 {
+  color: #087f83;
+}
+
+.content-section p,
+.content-section li {
+  line-height: 1.7;
 }
 
 .note {
-    background: #fff8e6;
-    border-left: 4px solid #e5a000;
-    padding: 12px;
-    margin: 15px 0;
+  background: #fff8e6;
+  border-left: 4px solid #e5a000;
+  padding: 12px;
+  margin: 15px 0;
 }
 
-button, .back {
-    display: inline-block;
-    border: none;
-    background: #0756a5;
-    color: white;
-    padding: 11px 18px;
-    border-radius: 7px;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 15px;
-    margin: 5px;
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
 }
 
-.actions {
-    text-align: center;
-    margin: 20px 0;
+.action-btn {
+  display: inline-block;
+  padding: 12px 18px;
+  background: #087f83;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
 }
 
-footer {
-    background: #0756a5;
-    color: white;
-    text-align: center;
-    padding: 18px;
-    margin-top: 30px;
+.action-btn.download {
+  background: #16834a;
+}
+
+.action-btn.print {
+  background: #d97706;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+th, td {
+  border: 1px solid #dce7e7;
+  padding: 11px;
+  text-align: left;
+}
+
+th {
+  background: #eaf5f5;
+  color: #087f83;
+}
+
+.no-results {
+  color: #667;
+  padding: 12px 0;
 }
 
 @media(max-width:600px) {
-    .card {
-        padding: 13px;
-    }
+  .subject-page {
+    margin: 20px auto;
+    padding: 12px;
+  }
 
-    table {
-        font-size: 12px;
-    }
+  .subject-hero {
+    padding: 22px;
+  }
 
-    th, td {
-        padding: 8px 6px;
-    }
+  .content-section {
+    padding: 16px;
+  }
 
-    header h1 {
-        font-size: 23px;
-    }
+  .action-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  th, td {
+    padding: 8px 6px;
+  }
 }
 
 @media print {
-    body {
-        background: white;
-    }
+  .topbar,
+  .back-link,
+  .chapter-search,
+  .chapter-list,
+  .action-buttons,
+  footer {
+    display: none !important;
+  }
 
-    .actions, .back {
-        display: none !important;
-    }
+  body {
+    background: white;
+    color: black;
+  }
 
-    .card {
-        box-shadow: none;
-        break-inside: avoid;
-    }
+  .subject-page {
+    margin: 0;
+    padding: 0;
+  }
 
-    table {
-        break-inside: auto;
-    }
+  .subject-hero,
+  .content-section {
+    background: white;
+    box-shadow: none;
+    border: none;
+  }
 
-    tr {
-        break-inside: avoid;
-    }
+  .content-section {
+    break-inside: auto;
+  }
+
+  tr {
+    break-inside: avoid;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Nurses Notes</h1>
-    <p>Normal Values in Nursing – 2026 Edition</p>
-    <p>A Clinical and Examination Reference</p>
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <span class="brandmark">✚</span>
+    <span>Nurses <b>Notes</b>
+      <small>LEARN • PRACTISE • GROW</small>
+    </span>
+  </a>
 </header>
 
-<div class="container">
+<main class="subject-page">
 
-<div class="actions">
-    <a class="back" href="index.html">← Back to Home</a>
-    <button onclick="window.print()">Print / Save as PDF</button>
+<a href="index.html" class="back-link">← Back to Home</a>
+
+<section class="subject-hero">
+  <span>GNM • NURSING EDUCATION</span>
+  <h1>Normal Values in Nursing</h1>
+  <p>
+    A comprehensive clinical and examination reference covering
+    vital signs, laboratory investigations, ABG, ECG, urine,
+    CSF, growth, obstetrics and critical care.
+  </p>
+  <p>2026 Edition | For GNM and B.Sc. Nursing students and nursing professionals.</p>
+</section>
+
+<div class="action-buttons">
+  <a class="action-btn download"
+     href="Nurses_Notes_Normal_Values_in_Nursing_2026.pdf"
+     download>
+    Download Original PDF
+  </a>
+
+  <button class="action-btn print" onclick="window.print()">
+    Print / Save as PDF
+  </button>
 </div>
 
-<div class="card">
+<h2>Topic List</h2>
+<p>Search and select a topic to begin reading.</p>
+
+<input
+  type="search"
+  id="chapterSearch"
+  class="chapter-search"
+  placeholder="Search normal values topics..."
+>
+
+<div class="chapter-list" id="chapterList">
+
+<a class="chapter-card" href="#about">
+  <strong>About This Book</strong>
+  <span>Overview and intended readers.</span>
+</a>
+
+<a class="chapter-card" href="#copyright">
+  <strong>Copyright and Publication</strong>
+  <span>Publication information and copyright notice.</span>
+</a>
+
+<a class="chapter-card" href="#disclaimer">
+  <strong>Medical Disclaimer</strong>
+  <span>Educational use and clinical safety information.</span>
+</a>
+
+<a class="chapter-card" href="#how-to-use">
+  <strong>How to Use This Book</strong>
+  <span>Understanding reference intervals and units.</span>
+</a>
+
+<a class="chapter-card" href="#vital-signs">
+  <strong>01. Adult Vital Signs</strong>
+  <span>Temperature, pulse, respiration, BP and SpO₂.</span>
+</a>
+
+<a class="chapter-card" href="#pediatric">
+  <strong>02. Pediatric Vital Signs</strong>
+  <span>Heart rate and respiratory rate by age.</span>
+</a>
+
+<a class="chapter-card" href="#anthropometry">
+  <strong>03. Anthropometry</strong>
+  <span>BMI, waist circumference and urine output.</span>
+</a>
+
+<a class="chapter-card" href="#cbc">
+  <strong>04. Complete Blood Count</strong>
+  <span>Haemoglobin, RBC, WBC, platelets and indices.</span>
+</a>
+
+<a class="chapter-card" href="#differential">
+  <strong>05. WBC Differential</strong>
+  <span>Neutrophils, lymphocytes and other cells.</span>
+</a>
+
+<a class="chapter-card" href="#coagulation">
+  <strong>06. Coagulation Profile</strong>
+  <span>PT, INR, aPTT, fibrinogen and D-dimer.</span>
+</a>
+
+<a class="chapter-card" href="#glucose">
+  <strong>07. Glucose and Diabetes</strong>
+  <span>Fasting glucose, OGTT and HbA1c.</span>
+</a>
+
+<a class="chapter-card" href="#electrolytes">
+  <strong>08. Electrolytes and Minerals</strong>
+  <span>Sodium, potassium, calcium and minerals.</span>
+</a>
+
+<a class="chapter-card" href="#renal">
+  <strong>09. Renal Function</strong>
+  <span>BUN, creatinine, eGFR and urine protein.</span>
+</a>
+
+<a class="chapter-card" href="#liver">
+  <strong>10. Liver Function Tests</strong>
+  <span>ALT, AST, bilirubin, albumin and proteins.</span>
+</a>
+
+<a class="chapter-card" href="#lipid">
+  <strong>11. Lipid Profile</strong>
+  <span>Cholesterol, LDL, HDL and triglycerides.</span>
+</a>
+
+</div>
+
+<p id="noResults" class="no-results" hidden>
+  No matching topics found.
+</p>
+
+<section class="content-section" id="about">
 <h2>About This Book</h2>
 <p>
 A comprehensive clinical and examination reference covering
@@ -182,9 +363,9 @@ CSF, growth, obstetrics and critical care.
 <p>
 For GNM and B.Sc. Nursing students and nursing professionals.
 </p>
-</div>
+</section>
 
-<div class="card">
+<section class="content-section" id="copyright">
 <h2>Copyright and Publication Information</h2>
 <p><b>Title:</b> Nurses Notes – Normal Values in Nursing</p>
 <p><b>Edition:</b> 2026</p>
@@ -198,9 +379,9 @@ owner and verify the ownership of the original text, explanations,
 selection, arrangement and design. Third-party content remains
 the property of its respective rights holder.
 </div>
-</div>
+</section>
 
-<div class="card">
+<section class="content-section" id="disclaimer">
 <h2>Medical and Educational Disclaimer</h2>
 <p>
 This book is an educational quick-reference resource. It is not
@@ -221,9 +402,9 @@ Never delay urgent care or change treatment based only on this book.
 Students and staff must follow training, scope of practice,
 supervision and local protocols.
 </p>
-</div>
+</section>
 
-<div class="card">
+<section class="content-section" id="how-to-use">
 <h2>How to Use This Book</h2>
 <p>
 Unless stated otherwise, laboratory ranges are typical adult
@@ -231,10 +412,10 @@ reference values. Pediatric, neonatal, pregnancy and older-adult
 values may differ substantially. Units are shown beside values.
 Verify the local laboratory interval before clinical interpretation.
 </p>
-</div>
+</section>
 
-<div class="card">
-<h2>1. Adult Vital Signs</h2>
+<section class="content-section" id="vital-signs">
+<h2>01. Adult Vital Signs</h2>
 <table>
 <tr><th>Parameter</th><th>Typical Adult Reference</th><th>Notes</th></tr>
 <tr><td>Temperature</td><td>36.5–37.5 °C oral</td><td>Site and technique affect reading.</td></tr>
@@ -244,10 +425,10 @@ Verify the local laboratory interval before clinical interpretation.
 <tr><td>SpO₂</td><td>Usually 95–100% at sea level</td><td>Targets may differ in chronic disease.</td></tr>
 <tr><td>Capillary refill</td><td>Usually ≤2 seconds</td><td>Temperature and perfusion affect it.</td></tr>
 </table>
-</div>
+</section>
 
-<div class="card">
-<h2>2. Pediatric Vital Signs</h2>
+<section class="content-section" id="pediatric">
+<h2>02. Pediatric Vital Signs</h2>
 <table>
 <tr><th>Age</th><th>Heart Rate/min</th><th>Respiratory Rate/min</th></tr>
 <tr><td>Newborn</td><td>100–160</td><td>30–60</td></tr>
@@ -262,10 +443,10 @@ Pediatric values change rapidly with age, sleep, fever, crying
 and activity. Interpret blood pressure using age, sex and height
 percentiles.
 </div>
-</div>
+</section>
 
-<div class="card">
-<h2>3. Anthropometry</h2>
+<section class="content-section" id="anthropometry">
+<h2>03. Anthropometry</h2>
 <table>
 <tr><th>Measurement</th><th>Typical Reference / Formula</th><th>Notes</th></tr>
 <tr><td>Adult BMI</td><td>18.5–24.9 kg/m²</td><td>Asian Indian risk cut-offs may be lower.</td></tr>
@@ -274,10 +455,10 @@ percentiles.
 <tr><td>Urine output</td><td>About ≥0.5 mL/kg/hour in adults</td><td>Interpret clinically.</td></tr>
 <tr><td>Daily fluid need</td><td>Individualized</td><td>Depends on age, weight and illness.</td></tr>
 </table>
-</div>
+</section>
 
-<div class="card">
-<h2>4. Complete Blood Count (CBC)</h2>
+<section class="content-section" id="cbc">
+<h2>04. Complete Blood Count (CBC)</h2>
 <table>
 <tr><th>Test</th><th>Typical Adult Reference</th><th>Unit</th></tr>
 <tr><td>Haemoglobin male</td><td>13.5–17.5</td><td>g/dL</td></tr>
@@ -294,10 +475,10 @@ percentiles.
 <tr><td>RDW</td><td>11.5–15.5</td><td>%</td></tr>
 <tr><td>Reticulocytes</td><td>0.5–1.5</td><td>%</td></tr>
 </table>
-</div>
+</section>
 
-<div class="card">
-<h2>5. WBC Differential</h2>
+<section class="content-section" id="differential">
+<h2>05. WBC Differential</h2>
 <table>
 <tr><th>Cell Type</th><th>Typical Adult Percentage</th><th>Notes</th></tr>
 <tr><td>Neutrophils</td><td>40–70%</td><td>Interpret with absolute count.</td></tr>
@@ -306,10 +487,10 @@ percentiles.
 <tr><td>Eosinophils</td><td>1–4%</td><td>Lab dependent.</td></tr>
 <tr><td>Basophils</td><td>0–1%</td><td>Lab dependent.</td></tr>
 </table>
-</div>
+</section>
 
-<div class="card">
-<h2>6. Coagulation Profile</h2>
+<section class="content-section" id="coagulation">
+<h2>06. Coagulation Profile</h2>
 <table>
 <tr><th>Test</th><th>Typical Reference</th><th>Notes</th></tr>
 <tr><td>PT</td><td>About 11–15 sec</td><td>Reagent dependent.</td></tr>
@@ -318,10 +499,10 @@ percentiles.
 <tr><td>Fibrinogen</td><td>About 200–400 mg/dL</td><td>Method dependent.</td></tr>
 <tr><td>D-dimer</td><td>Often &lt;500 ng/mL FEU</td><td>Assay and FEU/DDU matter.</td></tr>
 </table>
-</div>
+</section>
 
-<div class="card">
-<h2>7. Glucose and Diabetes</h2>
+<section class="content-section" id="glucose">
+<h2>07. Glucose and Diabetes</h2>
 <table>
 <tr><th>Test</th><th>Common Reference / Threshold</th><th>Note</th></tr>
 <tr><td>Fasting glucose normal</td><td>70–99 mg/dL</td><td>At least 8 h fasting.</td></tr>
@@ -339,10 +520,10 @@ Diagnostic categories are not individualized treatment targets.
 Pregnancy has separate criteria. Confirm diagnosis using current
 clinical guidelines.
 </div>
-</div>
+</section>
 
-<div class="card">
-<h2>8. Electrolytes and Minerals</h2>
+<section class="content-section" id="electrolytes">
+<h2>08. Electrolytes and Minerals</h2>
 <table>
 <tr><th>Test</th><th>Typical Adult Reference</th><th>Unit</th></tr>
 <tr><td>Sodium</td><td>135–145</td><td>mmol/L</td></tr>
@@ -355,10 +536,10 @@ clinical guidelines.
 <tr><td>Phosphate</td><td>2.5–4.5</td><td>mg/dL</td></tr>
 <tr><td>Serum osmolality</td><td>275–295</td><td>mOsm/kg</td></tr>
 </table>
-</div>
+</section>
 
-<div class="card">
-<h2>9. Renal Function</h2>
+<section class="content-section" id="renal">
+<h2>09. Renal Function</h2>
 <table>
 <tr><th>Test</th><th>Typical Adult Reference</th><th>Unit / Note</th></tr>
 <tr><td>BUN</td><td>7–20</td><td>mg/dL – Urea and BUN differ.</td></tr>
@@ -368,9 +549,9 @@ clinical guidelines.
 <tr><td>Urine protein 24 h</td><td>&lt;150</td><td>mg/day – Method dependent.</td></tr>
 <tr><td>Urine ACR</td><td>&lt;30</td><td>mg/g – Albumin-creatinine ratio.</td></tr>
 </table>
-</div>
+</section>
 
-<div class="card">
+<section class="content-section" id="liver">
 <h2>10. Liver Function Tests</h2>
 <table>
 <tr><th>Test</th><th>Typical Adult Reference</th><th>Unit</th></tr>
@@ -384,9 +565,9 @@ clinical guidelines.
 <tr><td>Albumin</td><td>3.5–5.0</td><td>g/dL</td></tr>
 <tr><td>Globulin</td><td>2.0–3.5</td><td>g/dL</td></tr>
 </table>
-</div>
+</section>
 
-<div class="card">
+<section class="content-section" id="lipid">
 <h2>11. Lipid Profile</h2>
 <table>
 <tr><th>Test</th><th>Desirable / Common Value</th><th>Unit</th></tr>
@@ -397,7 +578,7 @@ clinical guidelines.
 <tr><td>Triglycerides</td><td>&lt;150</td><td>mg/dL</td></tr>
 <tr><td>Non-HDL</td><td>&lt;130 often used</td><td>mg/dL</td></tr>
 </table>
-</div>
+</section>
 
 <div class="note">
 <b>Important:</b> These are typical reference values supplied for
@@ -405,19 +586,44 @@ educational use. Always verify the relevant laboratory's reference
 interval and follow current clinical guidance.
 </div>
 
-<div class="actions">
-    <a class="back" href="index.html">← Back to Home</a>
-    <button onclick="window.print()">Print / Save as PDF</button>
+<div class="action-buttons">
+  <a href="index.html" class="back-link">← Back to Home</a>
+
+  <a class="action-btn download"
+     href="Nurses_Notes_Normal_Values_in_Nursing_2026.pdf"
+     download>
+    Download Original PDF
+  </a>
+
+  <button class="action-btn print" onclick="window.print()">
+    Print / Save as PDF
+  </button>
 </div>
 
-</div>
+</main>
 
 <footer>
-    <b>Nurses Notes</b>
-    <p>Learn • Practice • Grow</p>
-    <p>Normal Values in Nursing | 2026</p>
+  <p>© 2026 Nurses Notes. Learn responsibly. Care compassionately.</p>
 </footer>
+
+<script>
+const search = document.getElementById("chapterSearch");
+const cards = document.querySelectorAll(".chapter-card");
+const noResults = document.getElementById("noResults");
+
+search.addEventListener("input", function() {
+  let count = 0;
+  const value = this.value.toLowerCase();
+
+  cards.forEach(card => {
+    const match = card.textContent.toLowerCase().includes(value);
+    card.style.display = match ? "block" : "none";
+    if (match) count++;
+  });
+
+  noResults.hidden = count !== 0;
+});
+</script>
 
 </body>
 </html>
-
