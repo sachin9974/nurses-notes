@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anatomy & Physiology | Nurses Notes</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.subject-page{max-width:1100px;margin:45px auto;padding:20px}
+.subject-hero{background:#eaf5f5;padding:35px;border-radius:18px;margin-bottom:30px}
+.subject-hero h1{color:#087f83;margin:10px 0}
+.subject-hero p{line-height:1.7;color:#455}
+.chapter-search{width:100%;padding:15px;border:1px solid #ddd;border-radius:10px;margin:15px 0 25px;font-size:16px}
+.chapter-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.chapter-card{display:block;text-decoration:none;color:#234;background:white;border:1px solid #e5eeee;border-radius:13px;padding:20px;transition:.2s}
+.chapter-card:hover{transform:translateY(-3px);border-color:#078b8b;box-shadow:0 5px 18px #0001}
+.chapter-card strong{display:block;margin-bottom:8px;color:#087f83}
+.chapter-card span{font-size:14px;color:#667}
+.back-link{display:inline-block;margin-bottom:20px;color:#087f83;text-decoration:none}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+<a class="brand" href="index.html">
+<span class="brandmark">✚</span>
+<span>Nurses <b>Notes</b>
+<small>LEARN • PRACTISE • GROW</small></span>
+</a>
+</header>
+
+<main class="subject-page">
+
+<a href="index.html" class="back-link">← Back to Home</a>
+
+<section class="subject-hero">
+<span>GNM • NURSING EDUCATION</span>
+<h1>Anatomy & Physiology</h1>
+<p>Study the structure and functions of the human body through simple explanations, detailed notes, diagrams and nursing applications.</p>
+</section>
+
+<h2>Chapter List</h2>
+<p>Explore the chapters below to begin learning.</p>
+
+<input type="search" id="chapterSearch"
+class="chapter-search"
+placeholder="Search chapters...">
+
+<div class="chapter-list" id="chapterList">
+
+<a class="chapter-card" href="#chapter1">
+<strong>01. Introduction to Anatomy & Physiology</strong>
+<span>Basic concepts, definitions and importance.</span>
+</a>
+
+<a class="chapter-card" href="#chapter2">
+<strong>02. Anatomical Terms and Organization</strong>
+<span>Anatomical position, directional terms, systems and cavities.</span>
+</a>
+
+<a class="chapter-card" href="#chapter3">
+<strong>03. Cell – Structure and Functions</strong>
+<span>Cell organelles, structure and cell division.</span>
+</a>
+
+<a class="chapter-card" href="#chapter4">
+<strong>04. Tissues of the Human Body</strong>
+<span>Types, structure and functions of tissues.</span>
+</a>
+
+<a class="chapter-card" href="#chapter5">
+<strong>05. Skeletal System</strong>
+<span>Bones, joints and their functions.</span>
+</a>
+
+<a class="chapter-card" href="#chapter6">
+<strong>06. Muscular System</strong>
+<span>Types of muscles and movements.</span>
+</a>
+
+<a class="chapter-card" href="#chapter7">
+<strong>07. Blood and Circulatory System</strong>
+<span>Blood components, heart and circulation.</span>
+</a>
+
+<a class="chapter-card" href="#chapter8">
+<strong>08. Lymphatic System</strong>
+<span>Lymph, lymph nodes and immunity.</span>
+</a>
+
+<a class="chapter-card" href="#chapter9">
+<strong>09. Respiratory System</strong>
+<span>Organs, breathing and gaseous exchange.</span>
+</a>
+
+<a class="chapter-card" href="#chapter10">
+<strong>10. Digestive System</strong>
+<span>Digestive organs, digestion and absorption.</span>
+</a>
+
+<a class="chapter-card" href="#chapter11">
+<strong>11. Urinary System</strong>
+<span>Kidneys, urine formation and excretion.</span>
+</a>
+
+<a class="chapter-card" href="#chapter12">
+<strong>12. Nervous System</strong>
+<span>Brain, spinal cord and nerves.</span>
+</a>
+
+<a class="chapter-card" href="#chapter13">
+<strong>13. Endocrine System</strong>
+<span>Glands and hormones.</span>
+</a>
+
+<a class="chapter-card" href="#chapter14">
+<strong>14. Reproductive System</strong>
+<span>Male and female reproductive organs.</span>
+</a>
+
+<a class="chapter-card" href="#chapter15">
+<strong>15. Special Sense Organs</strong>
+<span>Eye, ear, nose, tongue and skin sensations.</span>
+</a>
+
+</div>
+
+<p id="noResults" hidden>No matching chapters found.</p>
+
+</main>
+
+<footer>
+<p>© 2026 Nurses Notes. Learn responsibly. Care compassionately.</p>
+</footer>
+
+<script>
+const search = document.getElementById("chapterSearch");
+const cards = document.querySelectorAll(".chapter-card");
+const noResults = document.getElementById("noResults");
+
+search.addEventListener("input", function(){
+ let count = 0;
+ const value = this.value.toLowerCase();
+
+ cards.forEach(card => {
+  const match = card.textContent.toLowerCase().includes(value);
+  card.style.display = match ? "block" : "none";
+  if(match) count++;
+ });
+
+ noResults.hidden = count !== 0;
+});
+</script>
+
+</body>
+</html>
+
