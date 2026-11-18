@@ -14,56 +14,79 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f3f6fb;
-  color: #1e293b;
+  color: #263445;
+  line-height: 1.7;
 }
 
 header {
   background: #1769aa;
   color: white;
-  padding: 20px;
+  padding: 22px 15px;
   text-align: center;
 }
 
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
 .container {
-  max-width: 1000px;
+  max-width: 950px;
   margin: 25px auto;
   padding: 15px;
 }
 
 .card {
   background: white;
-  padding: 20px;
+  padding: 24px;
   border-radius: 12px;
   box-shadow: 0 3px 12px rgba(0,0,0,0.08);
 }
 
-h2 {
-  text-align: center;
-  margin-top: 0;
+h2, h3 {
+  color: #1769aa;
 }
 
-.download {
-  display: block;
-  text-align: center;
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 11px 17px;
   background: #1769aa;
   color: white;
-  padding: 14px;
-  border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
-  margin-bottom: 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 15px;
 }
 
-iframe {
-  width: 100%;
-  height: 750px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+.btn.green {
+  background: #16834a;
+}
+
+.btn.orange {
+  background: #d97706;
+}
+
+.topic {
+  padding: 15px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.term {
+  color: #1769aa;
+  font-weight: bold;
 }
 
 .back {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 25px;
   color: #1769aa;
   text-decoration: none;
   font-weight: bold;
@@ -76,8 +99,43 @@ footer {
 }
 
 @media(max-width:600px) {
-  iframe {
-    height: 600px;
+  .card {
+    padding: 16px;
+  }
+
+  header h1 {
+    font-size: 23px;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  header {
+    background: white;
+    color: black;
+    border-bottom: 2px solid black;
+  }
+
+  .buttons, .back, footer {
+    display: none !important;
+  }
+
+  .card {
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .container {
+    margin: 0;
+    padding: 0;
+  }
+
+  .topic {
+    break-inside: avoid;
   }
 }
 </style>
@@ -91,30 +149,159 @@ footer {
 </header>
 
 <div class="container">
-  <div class="card">
+<div class="card">
 
-    <h2>Medical Terminology PDF</h2>
+<h2>Medical Terminology – Read Online</h2>
 
-    <a class="download"
-       href="https://drive.google.com/uc?export=download&id=1aU64BAWB8wGZKrCqZj1NwZkI3Yxlk87V"
-       target="_blank">
-       Download PDF
-    </a>
+<p>
+Medical terminology is the language used by healthcare professionals
+to describe the human body, diseases, medical conditions, investigations
+and treatments.
+</p>
 
-    <iframe
-      src="https://drive.google.com/file/d/1aU64BAWB8wGZKrCqZj1NwZkI3Yxlk87V/preview"
-      title="Medical Terminology PDF">
-    </iframe>
+<div class="buttons">
+  <a class="btn green"
+     href="medical-terminology.pdf"
+     download>
+     Download Original PDF
+  </a>
 
-    <a class="back" href="index.html">← Back to Home</a>
+  <button class="btn orange" onclick="window.print()">
+    Print / Save as PDF
+  </button>
+</div>
 
-  </div>
+<h2>Chapter 1: Introduction to Medical Terminology</h2>
+
+<div class="topic">
+<h3>1. Definition</h3>
+<p>
+Medical terminology is a system of words used to communicate
+accurately about health, diseases, body structures and medical care.
+</p>
+</div>
+
+<div class="topic">
+<h3>2. Importance of Medical Terminology</h3>
+<ul>
+<li>Helps healthcare professionals communicate clearly.</li>
+<li>Improves understanding of medical records.</li>
+<li>Helps nurses understand diagnoses and treatment plans.</li>
+<li>Reduces communication errors.</li>
+<li>Supports accurate documentation and reporting.</li>
+</ul>
+</div>
+
+<div class="topic">
+<h3>3. Basic Word Components</h3>
+
+<p><span class="term">Prefix:</span>
+A word part placed at the beginning of a medical term.</p>
+<p>Example: Hyper- means excessive or above normal.</p>
+
+<p><span class="term">Root Word:</span>
+The main part that gives the basic meaning of a medical term.</p>
+<p>Example: Cardi means heart.</p>
+
+<p><span class="term">Suffix:</span>
+A word part placed at the end of a medical term.</p>
+<p>Example: -itis means inflammation.</p>
+
+<p><span class="term">Combining Vowel:</span>
+A vowel, usually 'o', used to connect word parts.</p>
+</div>
+
+<div class="topic">
+<h3>4. Common Medical Prefixes</h3>
+<ul>
+<li>Hyper- : Excessive or high</li>
+<li>Hypo- : Low or below normal</li>
+<li>Brady- : Slow</li>
+<li>Tachy- : Fast</li>
+<li>Anti- : Against</li>
+<li>Pre- : Before</li>
+<li>Post- : After</li>
+<li>Sub- : Below</li>
+<li>Intra- : Within</li>
+<li>Inter- : Between</li>
+</ul>
+</div>
+
+<div class="topic">
+<h3>5. Common Medical Suffixes</h3>
+<ul>
+<li>-itis : Inflammation</li>
+<li>-ectomy : Surgical removal</li>
+<li>-ology : Study of</li>
+<li>-algia : Pain</li>
+<li>-emia : Blood condition</li>
+<li>-scopy : Visual examination</li>
+<li>-gram : Record or image</li>
+<li>-megaly : Enlargement</li>
+<li>-oma : Tumour or mass</li>
+<li>-pathy : Disease</li>
+</ul>
+</div>
+
+<div class="topic">
+<h3>6. Common Medical Root Words</h3>
+<ul>
+<li>Cardi : Heart</li>
+<li>Nephr : Kidney</li>
+<li>Hepat : Liver</li>
+<li>Gastr : Stomach</li>
+<li>Derm : Skin</li>
+<li>Oste : Bone</li>
+<li>Neur : Nerve</li>
+<li>Haemat : Blood</li>
+<li>Rhin : Nose</li>
+<li>Ophthalm : Eye</li>
+</ul>
+</div>
+
+<div class="topic">
+<h3>7. Examples of Medical Terms</h3>
+<ul>
+<li>Cardiology – Study of the heart.</li>
+<li>Dermatitis – Inflammation of the skin.</li>
+<li>Nephrology – Study of the kidneys.</li>
+<li>Tachycardia – Abnormally fast heart rate.</li>
+<li>Bradycardia – Abnormally slow heart rate.</li>
+<li>Gastrectomy – Surgical removal of all or part of the stomach.</li>
+</ul>
+</div>
+
+<div class="topic">
+<h3>8. Nursing Importance</h3>
+<ul>
+<li>Understand doctors' instructions.</li>
+<li>Read and interpret patient records.</li>
+<li>Document nursing care accurately.</li>
+<li>Communicate effectively with healthcare teams.</li>
+<li>Understand investigations and treatment procedures.</li>
+</ul>
+</div>
+
+<h2>Quick Revision</h2>
+<ul>
+<li>Prefix = Beginning of a word.</li>
+<li>Root = Main meaning.</li>
+<li>Suffix = Ending of a word.</li>
+<li>Cardi = Heart.</li>
+<li>-itis = Inflammation.</li>
+<li>-ectomy = Surgical removal.</li>
+</ul>
+
+<a class="back" href="index.html">← Back to Home</a>
+
+</div>
 </div>
 
 <footer>
-  © Nurses Notes
+© Nurses Notes
 </footer>
 
 </body>
 </html>
+
 
