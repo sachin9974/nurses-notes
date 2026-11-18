@@ -129,6 +129,7 @@
   </a>
 </section>
 
+
 <section class="contact-card">
   <h2>Share Your Feedback</h2>
 
@@ -138,11 +139,71 @@
     new features and study materials.
   </p>
 
-  <a class="contact-button"
-     href="mailto:sachinkumarhappy99@gmail.com?subject=Nurses%20Notes%20Feedback">
-     Submit Feedback
-  </a>
+  <form id="feedbackForm"
+    action="https://script.google.com/macros/s/AKfycbwwHkb-gn8JX1V6JcZS92VtMANInngzxkY0jnLESc9fjKZUJKZQ8vE0WVsuKpTN9gYFHg/exec"
+    method="POST"
+    target="feedbackFrame">
+
+    <textarea
+      name="message"
+      id="feedbackMessage"
+      required
+      minlength="3"
+      maxlength="3000"
+      rows="6"
+      placeholder="Write your feedback here..."
+      style="width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;box-sizing:border-box;font:inherit;margin-bottom:12px;">
+    </textarea>
+
+    <input
+      name="website"
+      type="text"
+      tabindex="-1"
+      autocomplete="off"
+      aria-hidden="true"
+      style="position:absolute;left:-9999px;">
+
+    <button class="contact-button"
+      type="submit"
+      style="border:none;cursor:pointer;">
+      Submit Feedback
+    </button>
+
+    <p id="feedbackStatus" role="status" aria-live="polite"></p>
+  </form>
+
+  <iframe
+    name="feedbackFrame"
+    id="feedbackFrame"
+    title="Feedback submission"
+    style="display:none;">
+  </iframe>
 </section>
+
+<script>
+  const feedbackForm = document.getElementById("feedbackForm");
+  const feedbackStatus = document.getElementById("feedbackStatus");
+  const feedbackFrame = document.getElementById("feedbackFrame");
+
+  feedbackForm.addEventListener("submit", function() {
+    feedbackStatus.textContent = "Submitting feedback...";
+  });
+
+  window.addEventListener("message", function(event) {
+    if (event.source !== feedbackFrame.contentWindow) return;
+
+    if (event.data === "nurses-notes-feedback-success") {
+      feedbackStatus.textContent =
+        "Thank you! Your feedback has been submitted.";
+      feedbackForm.reset();
+    } else if (event.data === "nurses-notes-feedback-error") {
+      feedbackStatus.textContent =
+        "Unable to submit. Please try again.";
+    }
+  });
+</script>
+
+
 
 </main>
 
