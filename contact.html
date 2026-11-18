@@ -190,7 +190,7 @@
   });
 
   window.addEventListener("message", function(event) {
-    if (event.source !== feedbackFrame.contentWindow) return;
+  
 
     if (event.data === "nurses-notes-feedback-success") {
       feedbackStatus.textContent =
