@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Medical Terminology | Nurses Notes</title>
 
 <style>
@@ -18,18 +19,36 @@ body {
   line-height: 1.7;
 }
 
-header {
+/* Website Header */
+.brand-header {
   background: #1769aa;
   color: white;
-  padding: 22px 15px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  padding: 10px 20px;
+  text-align: left;
 }
 
-header h1 {
+.brand-header .site-logo {
+  width: 180px;
+  height: 180px;
+  max-width: 180px;
+  max-height: 180px;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.brand-header h1 {
+  color: white;
   margin: 0;
   font-size: 28px;
 }
 
+/* Main Content */
 .container {
   max-width: 950px;
   margin: 25px auto;
@@ -98,26 +117,44 @@ footer {
   color: #64748b;
 }
 
-@media(max-width:600px) {
+/* Mobile Responsive */
+@media(max-width: 600px) {
+  .brand-header {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .brand-header .site-logo {
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .brand-header h1 {
+    font-size: 23px;
+  }
+
   .card {
     padding: 16px;
   }
-
-  header h1 {
-    font-size: 23px;
-  }
 }
 
+/* Print Settings */
 @media print {
   body {
     background: white;
     color: black;
   }
 
-  header {
+  .brand-header {
     background: white;
     color: black;
     border-bottom: 2px solid black;
+  }
+
+  .brand-header h1 {
+    color: black;
   }
 
   .buttons, .back, footer {
@@ -138,30 +175,21 @@ footer {
     break-inside: avoid;
   }
 }
-  img.site-logo {
-    width: 180px !important;
-    height: 180px !important;
-    max-width: 180px !important;
-    max-height: 180px !important;
-    object-fit: contain !important;
-    display: block !important;
-    margin: 5px auto !important;
-}
 </style>
 </head>
-  <header>
-<img src="nurses-notes-logo.png"
-     alt="Nurses Notes Logo"
-     class="site-logo">
-  </header>
+
 <body>
 
+<!-- Website Header -->
 <header class="brand-header">
-  <img src="nurses-notes-logo.png
-    alt="Nures Notes Logo">
-  <h2>Nurses Notes</h2>
+  <img src="nurses-notes-logo.png"
+       alt="Nurses Notes Logo"
+       class="site-logo">
+
+  <h1>Nurses Notes</h1>
 </header>
 
+<!-- Main Content -->
 <div class="container">
 <div class="card">
 
@@ -174,6 +202,7 @@ and treatments.
 </p>
 
 <div class="buttons">
+
   <a class="btn green"
      href="medical-terminology.pdf"
      download>
@@ -183,6 +212,7 @@ and treatments.
   <button class="btn orange" onclick="window.print()">
     Print / Save as PDF
   </button>
+
 </div>
 
 <h2>Chapter 1: Introduction to Medical Terminology</h2>
@@ -317,5 +347,3 @@ A vowel, usually 'o', used to connect word parts.</p>
 
 </body>
 </html>
-
-
