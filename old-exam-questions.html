@@ -80,17 +80,16 @@ years.forEach((year) => {
   bscYear.className = "year";
 
   bscYear.innerHTML = `
-    <summary>${year}</summary>
-    <div class="year-content">
-      ${[1,3,5,7].map((sem) => `
-        <div class="item">
-          <strong>Semester ${sem} & ${sem+1}</strong>
-          <a href="#" onclick="return false">PDF Coming Soon</a>
-        </div>
-      `).join("")}
-    </div>
-  `;
-
+  <summary>${year}</summary>
+  <div class="year-content">
+    ${[1,2,3,4,5,6,7,8].map((sem) => `
+      <div class="item">
+        <strong>Semester ${sem}</strong>
+        <a href="#" onclick="return false">PDF Coming Soon</a>
+      </div>
+    `).join("")}
+  </div>
+`;
   bsc.appendChild(bscYear);
 
   const gnmYear = document.createElement("details");
