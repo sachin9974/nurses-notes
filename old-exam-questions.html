@@ -3,69 +3,224 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Old Exam Questions | Nurses Notes</title>
+<link rel="stylesheet" href="style.css">
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#263449;line-height:1.6}
-header{background:#123b70;color:white;padding:22px 6%}
-header h1{margin:0;font-size:25px}
-header p{margin:5px 0 0;color:#dceaff}
-nav{background:white;padding:13px 6%;border-bottom:1px solid #ddd}
-nav a{color:#1763ad;text-decoration:none;font-weight:bold}
-.container{max-width:900px;margin:25px auto;padding:0 16px}
-.hero{background:linear-gradient(135deg,#123b70,#287bc0);color:white;padding:28px;border-radius:14px;margin-bottom:22px}
-.hero h2{margin:0 0 8px}
-.panel{background:white;padding:22px;border-radius:12px;margin-bottom:22px;border:1px solid #e1e7ef}
-.panel h2{color:#164d85;margin-top:0}
-.year{border:1px solid #dce4ed;border-radius:9px;margin:12px 0;overflow:hidden}
-.year summary{background:#edf4fc;padding:14px;font-weight:bold;color:#164d85;cursor:pointer}
-.year-content{padding:14px}
-.item{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#f7f9fc;padding:13px;margin:9px 0;border-radius:8px}
-.item a{background:#1763ad;color:white;padding:7px 13px;border-radius:6px;text-decoration:none;font-size:13px}
-.item a:hover{background:#123b70}
-.pending{color:#778397;font-size:12px}
-footer{text-align:center;padding:25px;color:#68778b;font-size:13px}
-@media(max-width:500px){.item{align-items:flex-start;flex-direction:column}}
+.subject-page {
+  max-width: 1100px;
+  margin: 45px auto;
+  padding: 20px;
+}
+
+.subject-hero {
+  background: #eaf5f5;
+  padding: 35px;
+  border-radius: 18px;
+  margin-bottom: 30px;
+}
+
+.subject-hero h1 {
+  color: #087f83;
+  margin: 10px 0;
+}
+
+.subject-hero p {
+  line-height: 1.7;
+  color: #455;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #087f83;
+  text-decoration: none;
+}
+
+.chapter-search {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 15px 0 25px;
+  font-size: 16px;
+}
+
+.content-section {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  margin-top: 25px;
+  border: 1px solid #e5eeee;
+}
+
+.content-section h2 {
+  color: #087f83;
+  margin-top: 0;
+}
+
+.year {
+  border: 1px solid #e5eeee;
+  border-radius: 12px;
+  margin: 14px 0;
+  overflow: hidden;
+}
+
+.year summary {
+  background: #eaf5f5;
+  color: #087f83;
+  padding: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  list-style-position: inside;
+}
+
+.year-content {
+  padding: 14px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #f7fafa;
+  border: 1px solid #edf2f2;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 9px;
+}
+
+.item strong {
+  color: #234;
+}
+
+.pending {
+  color: #778397;
+  font-size: 13px;
+}
+
+.item a {
+  background: #087f83;
+  color: white;
+  padding: 8px 13px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.item a:hover {
+  background: #056568;
+}
+
+.no-results {
+  color: #667;
+  padding: 12px 0;
+}
+
+@media(max-width:600px) {
+  .subject-page {
+    margin: 20px auto;
+    padding: 12px;
+  }
+
+  .subject-hero {
+    padding: 22px;
+  }
+
+  .content-section {
+    padding: 16px;
+  }
+
+  .item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media print {
+  .topbar,
+  .back-link,
+  .chapter-search,
+  footer {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .subject-page {
+    margin: 0;
+    padding: 0;
+  }
+
+  .content-section {
+    box-shadow: none;
+    border: none;
+  }
+}
 </style>
 </head>
+
 <body>
 
-<header>
-<h1>📘 Nurses Notes</h1>
-<p>Previous Year Nursing Examination Papers</p>
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <span class="brandmark">✚</span>
+    <span>Nurses <b>Notes</b>
+      <small>LEARN • PRACTISE • GROW</small>
+    </span>
+  </a>
 </header>
 
-<nav>
-<a href="index.html">Home</a> /
-Old Exam Questions
-</nav>
+<main class="subject-page">
 
-<main class="container">
+<a href="index.html" class="back-link">← Back to Home</a>
 
-<div class="hero">
-<h2>Old Exam Questions</h2>
-<p>Previous-year examination papers for B.Sc. Nursing and GNM students.</p>
-</div>
-
-<section class="panel">
-<h2>🎓 B.Sc. Nursing</h2>
-<p>Gujarat University</p>
-
-<div id="bsc-years"></div>
+<section class="subject-hero">
+  <span>GNM • B.SC. NURSING</span>
+  <h1>Old Exam Questions</h1>
+  <p>
+    Prepare for nursing examinations with previous-year question
+    papers. Explore examination years, semesters and GNM courses.
+  </p>
 </section>
 
-<section class="panel">
-<h2>🏥 GNM Nursing</h2>
-<p>Gujarat Nursing Council</p>
+<h2>Find Previous Year Papers</h2>
+<p>Search by year, course or semester.</p>
 
-<div id="gnm-years"></div>
+<input
+  type="search"
+  id="chapterSearch"
+  class="chapter-search"
+  placeholder="Search year, semester or course..."
+>
+
+<p id="noResults" class="no-results" hidden>
+  No matching examination papers found.
+</p>
+
+<section class="content-section" id="bsc-section">
+  <h2>B.Sc. Nursing</h2>
+  <p>Gujarat University</p>
+  <div id="bsc-years"></div>
 </section>
+
+<section class="content-section" id="gnm-section">
+  <h2>GNM Nursing</h2>
+  <p>Gujarat Nursing Council</p>
+  <div id="gnm-years"></div>
+</section>
+
+<a href="index.html" class="back-link">← Back to Home</a>
 
 </main>
 
 <footer>
-<p>© Nurses Notes | Nursing Education</p>
-<p>For educational purposes only.</p>
+  <p>© 2026 Nurses Notes. Learn responsibly. Care compassionately.</p>
 </footer>
 
 <script>
@@ -80,16 +235,17 @@ years.forEach((year) => {
   bscYear.className = "year";
 
   bscYear.innerHTML = `
-  <summary>${year}</summary>
-  <div class="year-content">
-    ${[1,2,3,4,5,6,7,8].map((sem) => `
-      <div class="item">
-        <strong>Semester ${sem}</strong>
-        <a href="#" onclick="return false">PDF Coming Soon</a>
-      </div>
-    `).join("")}
-  </div>
-`;
+    <summary>${year}</summary>
+    <div class="year-content">
+      ${[1,2,3,4,5,6,7,8].map((sem) => `
+        <div class="item">
+          <strong>Semester ${sem}</strong>
+          <span class="pending">PDF Coming Soon</span>
+        </div>
+      `).join("")}
+    </div>
+  `;
+
   bsc.appendChild(bscYear);
 
   const gnmYear = document.createElement("details");
@@ -101,7 +257,7 @@ years.forEach((year) => {
       ${["1st Year","2nd Year","3rd Year"].map((name) => `
         <div class="item">
           <strong>${name}</strong>
-          <a href="#" onclick="return false">PDF Coming Soon</a>
+          <span class="pending">PDF Coming Soon</span>
         </div>
       `).join("")}
     </div>
@@ -109,9 +265,29 @@ years.forEach((year) => {
 
   gnm.appendChild(gnmYear);
 });
+
+const search = document.getElementById("chapterSearch");
+const noResults = document.getElementById("noResults");
+
+search.addEventListener("input", function() {
+  const value = this.value.toLowerCase();
+  let count = 0;
+
+  document.querySelectorAll(".year").forEach(year => {
+    const matches = year.textContent.toLowerCase().includes(value);
+
+    year.style.display = matches ? "block" : "none";
+
+    if (matches) {
+      count++;
+      if (value) year.open = true;
+    }
+  });
+
+  noResults.hidden = count !== 0;
+});
 </script>
 
 </body>
 </html>
-
 
