@@ -8,6 +8,18 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #263449;
+  line-height: 1.6;
+}
+
 .subject-page {
   max-width: 1100px;
   margin: 45px auto;
@@ -36,6 +48,7 @@
   margin-bottom: 20px;
   color: #087f83;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .chapter-search {
@@ -97,22 +110,13 @@
 }
 
 .pending {
-  color: #778397;
-  font-size: 13px;
-}
-
-.item a {
+  display: inline-block;
   background: #087f83;
   color: white;
   padding: 8px 13px;
   border-radius: 7px;
-  text-decoration: none;
   font-size: 13px;
   white-space: nowrap;
-}
-
-.item a:hover {
-  background: #056568;
 }
 
 .no-results {
@@ -203,13 +207,13 @@
   No matching examination papers found.
 </p>
 
-<section class="content-section" id="bsc-section">
+<section class="content-section">
   <h2>B.Sc. Nursing</h2>
   <p>Gujarat University</p>
   <div id="bsc-years"></div>
 </section>
 
-<section class="content-section" id="gnm-section">
+<section class="content-section">
   <h2>GNM Nursing</h2>
   <p>Gujarat Nursing Council</p>
   <div id="gnm-years"></div>
@@ -290,4 +294,3 @@ search.addEventListener("input", function() {
 
 </body>
 </html>
-
