@@ -1,1 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Old Exam Questions | Nurses Notes</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#263449;line-height:1.6}
+header{background:#123b70;color:white;padding:22px 6%}
+header h1{margin:0;font-size:25px}
+header p{margin:5px 0 0;color:#dceaff}
+nav{background:white;padding:13px 6%;border-bottom:1px solid #ddd}
+nav a{color:#1763ad;text-decoration:none;font-weight:bold}
+.container{max-width:900px;margin:25px auto;padding:0 16px}
+.hero{background:linear-gradient(135deg,#123b70,#287bc0);color:white;padding:28px;border-radius:14px;margin-bottom:22px}
+.hero h2{margin:0 0 8px}
+.panel{background:white;padding:22px;border-radius:12px;margin-bottom:22px;border:1px solid #e1e7ef}
+.panel h2{color:#164d85;margin-top:0}
+.year{border:1px solid #dce4ed;border-radius:9px;margin:12px 0;overflow:hidden}
+.year summary{background:#edf4fc;padding:14px;font-weight:bold;color:#164d85;cursor:pointer}
+.year-content{padding:14px}
+.item{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#f7f9fc;padding:13px;margin:9px 0;border-radius:8px}
+.item a{background:#1763ad;color:white;padding:7px 13px;border-radius:6px;text-decoration:none;font-size:13px}
+.item a:hover{background:#123b70}
+.pending{color:#778397;font-size:12px}
+footer{text-align:center;padding:25px;color:#68778b;font-size:13px}
+@media(max-width:500px){.item{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+
+<header>
+<h1>📘 Nurses Notes</h1>
+<p>Previous Year Nursing Examination Papers</p>
+</header>
+
+<nav>
+<a href="index.html">Home</a> /
+Old Exam Questions
+</nav>
+
+<main class="container">
+
+<div class="hero">
+<h2>Old Exam Questions</h2>
+<p>Previous-year examination papers for B.Sc. Nursing and GNM students.</p>
+</div>
+
+<section class="panel">
+<h2>🎓 B.Sc. Nursing</h2>
+<p>Gujarat University</p>
+
+<div id="bsc-years"></div>
+</section>
+
+<section class="panel">
+<h2>🏥 GNM Nursing</h2>
+<p>Gujarat Nursing Council</p>
+
+<div id="gnm-years"></div>
+</section>
+
+</main>
+
+<footer>
+<p>© Nurses Notes | Nursing Education</p>
+<p>For educational purposes only.</p>
+</footer>
+
+<script>
+const years = [2019,2020,2021,2022,2023,2024,2025,2026];
+
+const bsc = document.getElementById("bsc-years");
+const gnm = document.getElementById("gnm-years");
+
+years.forEach((year) => {
+
+  const bscYear = document.createElement("details");
+  bscYear.className = "year";
+
+  bscYear.innerHTML = `
+    <summary>${year}</summary>
+    <div class="year-content">
+      ${[1,3,5,7].map((sem) => `
+        <div class="item">
+          <strong>Semester ${sem} & ${sem+1}</strong>
+          <a href="#" onclick="return false">PDF Coming Soon</a>
+        </div>
+      `).join("")}
+    </div>
+  `;
+
+  bsc.appendChild(bscYear);
+
+  const gnmYear = document.createElement("details");
+  gnmYear.className = "year";
+
+  gnmYear.innerHTML = `
+    <summary>${year}</summary>
+    <div class="year-content">
+      ${["1st Year","2nd Year","3rd Year"].map((name) => `
+        <div class="item">
+          <strong>${name}</strong>
+          <a href="#" onclick="return false">PDF Coming Soon</a>
+        </div>
+      `).join("")}
+    </div>
+  `;
+
+  gnm.appendChild(gnmYear);
+});
+</script>
+
+</body>
+</html>
+
 
