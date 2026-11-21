@@ -116,12 +116,18 @@ body {
   border-radius: 7px;
   font-size: 13px;
   white-space: nowrap;
+  text-align: center;
+  border: none;
 }
 
 .pdf-link:hover { opacity: .85; }
 
 .pdf-link.supplementary {
   background: #16834a;
+}
+
+.pdf-link.download {
+  background: #344b63;
 }
 
 .paper-buttons {
@@ -175,6 +181,7 @@ body {
 
   .pdf-link {
     text-align: center;
+    width: 100%;
   }
 }
 
@@ -530,7 +537,7 @@ Object.keys(gnmSubjects).forEach((studyYear) => {
   gnm.appendChild(studyYearBox);
 });
 
-// Create a PDF button
+// Create Open PDF and Download PDF buttons
 function createPDFButton(folder, filename, type) {
 
   const path = `${folder}/${filename}`;
@@ -548,7 +555,13 @@ function createPDFButton(folder, filename, type) {
        href="${path}"
        target="_blank"
        rel="noopener">
-       ${label} – Open PDF
+       👁️ ${label} – Open PDF
+    </a>
+
+    <a class="pdf-link download"
+       href="${path}"
+       download="${filename}">
+       ⬇️ Download PDF
     </a>
   `;
 }
