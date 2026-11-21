@@ -346,8 +346,14 @@ const gnmSubjects = {
   ]
 };
 
-// Individual CHN-II and OBG PDF files
-// Folder names and filenames match GitHub.
+// Full subject display names
+const subjectDisplayNames = {
+  "CHN-II": "Community Health Nursing – II",
+  "OBG": "Midwifery and Gynecological Nursing"
+};
+
+// Individual PDF folders and filenames
+// Original GitHub folder names are unchanged.
 
 const paperData = {
 
@@ -566,7 +572,7 @@ function createPDFButton(folder, filename, type) {
   `;
 }
 
-// GNM 3rd Year: Year → Subject → Main / Supplementary
+// GNM 3rd Year: Year → Full Subject Name → Main / Supplementary
 const thirdYearBox = document.createElement("details");
 thirdYearBox.className = "year course-group";
 
@@ -587,17 +593,17 @@ thirdYearBox.innerHTML = `
         return "";
       }
 
-      function subjectHTML(subjectName, subjectInfo) {
+      function subjectHTML(dataKey, subjectInfo) {
 
         if (!subjectInfo.length) return "";
 
         return `
           <div class="subject-paper">
-            <strong>${subjectName}</strong>
+            <strong>${subjectDisplayNames[dataKey]}</strong>
             <div class="paper-buttons">
               ${subjectInfo.map(paper =>
                 createPDFButton(
-                  paperData[subjectName].folder,
+                  paperData[dataKey].folder,
                   paper[2],
                   paper[1]
                 )
