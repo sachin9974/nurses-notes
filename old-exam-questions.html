@@ -63,10 +63,7 @@ body {
   border: 1px solid #e5eeee;
 }
 
-.content-section h2 {
-  color: #087f83;
-  margin-top: 0;
-}
+.content-section h2 { color: #087f83; }
 
 .year {
   border: 1px solid #e5eeee;
@@ -115,14 +112,42 @@ body {
   background: #087f83;
   color: white;
   text-decoration: none;
-  padding: 8px 13px;
+  padding: 9px 13px;
   border-radius: 7px;
   font-size: 13px;
   white-space: nowrap;
 }
 
-.pdf-link:hover, .pending:hover {
-  opacity: .85;
+.pdf-link:hover { opacity: .85; }
+
+.pdf-link.supplementary {
+  background: #16834a;
+}
+
+.paper-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.subject-paper {
+  background: #f7fafa;
+  border: 1px solid #edf2f2;
+  padding: 15px;
+  margin: 12px 0;
+  border-radius: 9px;
+}
+
+.subject-paper strong {
+  display: block;
+  color: #234;
+  margin-bottom: 5px;
+}
+
+.paper-label {
+  color: #667;
+  font-size: 13px;
 }
 
 .no-results {
@@ -142,6 +167,14 @@ body {
   .item {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .paper-buttons {
+    flex-direction: column;
+  }
+
+  .pdf-link {
+    text-align: center;
   }
 }
 
@@ -204,15 +237,11 @@ body {
   No matching examination papers found.
 </p>
 
-<!-- B.SC. NURSING -->
-
 <section class="content-section">
   <h2>B.Sc. Nursing</h2>
   <p>Gujarat University</p>
   <div id="bsc-years"></div>
 </section>
-
-<!-- GNM NURSING -->
 
 <section class="content-section">
   <h2>GNM Nursing</h2>
@@ -236,6 +265,11 @@ const bscExamYears = [
 
 const gnmExamYears = [
   2016, 2017, 2018, 2019, 2020,
+  2021, 2022, 2023, 2024, 2025, 2026
+];
+
+const gnmThirdYears = [
+  2015, 2016, 2017, 2018, 2019, 2020,
   2021, 2022, 2023, 2024, 2025, 2026
 ];
 
@@ -292,38 +326,161 @@ const bscSubjects = {
 
 const gnmSubjects = {
   "1st Year": [
-  "Behavioral Sciences",
-  "Bio Science",
-  "Nursing Foundations",
-  "Community Health Nursing – I"
-],
+    "Behavioral Sciences",
+    "Bio Science",
+    "Nursing Foundations",
+    "Community Health Nursing – I"
+  ],
   "2nd Year": [
     "Medical-Surgical Nursing I",
     "Medical-Surgical Nursing II",
     "Mental Health Nursing",
     "Child Health Nursing"
-  ],
-  "3rd Year": [
-    "Community Health Nursing – II (CHN-II)",
-    "Midwifery and Gynecological Nursing (OBG)"
   ]
+};
+
+// Individual CHN-II and OBG PDF files
+// Folder names and filenames match GitHub.
+
+const paperData = {
+
+  "CHN-II": {
+    folder: "GNC_CHN-II_2015-2026",
+    papers: [
+
+      ["2026", "Regular",
+       "GNC_CHN-II_22-09-2026_Regular_AT302AE26.pdf"],
+
+      ["2025", "Regular",
+       "GNC_CHN-II_16-12-2025_Regular_AT302AE25.pdf"],
+
+      ["2023", "Regular",
+       "GNC_CHN-II_10-10-2023_Regular_AT302AE23.pdf"],
+
+      ["2022", "Regular",
+       "GNC_CHN-II_13-09-2022_Regular_AT302AE22.pdf"],
+
+      ["2021", "Regular",
+       "GNC_CHN-II_14-09-2021_Regular_A15020641.pdf"],
+
+      ["2020", "Regular",
+       "GNC_CHN-II_01-09-2020_Regular_AT302AE20.pdf"],
+
+      ["2019", "Regular",
+       "GNC_CHN-II_04-09-2019_Regular_AT302AE19.pdf"],
+
+      ["2016", "Regular",
+       "GNC_CHN-II_29-06-2016_Regular.pdf"],
+
+      ["2015", "Regular",
+       "GNC_CHN-II_17-06-2015_Regular_AT302AE15.pdf"],
+
+      ["2025", "Supplementary",
+       "GNC_CHN-II_11-02-2025_Repeater_AT302AE25.pdf"],
+
+      ["2024", "Supplementary",
+       "GNC_CHN-II_27-04-2024_Repeater_AT302SE24.pdf"],
+
+      ["2023", "Supplementary",
+       "GNC_CHN-II_18-04-2023_Repeater_AT102SE23.pdf"],
+
+      ["2022", "Supplementary",
+       "GNC_CHN-II_29-03-2022_Repeater_AT302SE22.pdf"],
+
+      ["2020", "Supplementary",
+       "GNC_CHN-II_25-02-2020_Repeater_AT302SE20.pdf"],
+
+      ["2019", "Supplementary",
+       "GNC_CHN-II_19-02-2019_Repeater_AT302SE19.pdf"],
+
+      ["2018", "Supplementary",
+       "GNC_CHN-II_31-07-2018_Repeater_AT302SE18.pdf"],
+
+      ["2018", "Supplementary 2",
+       "GNC_CHN-II_16-02-2018_Repeater_AT303SE18.pdf"],
+
+      ["2017", "Supplementary",
+       "GNC_CHN-II_05-07-2017_Repeater_AT303ER17.pdf"],
+
+      ["2017", "Supplementary 2",
+       "GNC_CHN-II_01-02-2017_Repeater.pdf"]
+
+    ]
+  },
+
+  "OBG": {
+    folder: "GNC_OBG_2015-2026",
+    papers: [
+
+      ["2026", "Regular",
+       "GNC_OBG_21-09-2026_Regular_AT301AE26.pdf"],
+
+      ["2025", "Regular",
+       "GNC_OBG_15-12-2025_Regular_AT301AE25.pdf"],
+
+      ["2023", "Regular",
+       "GNC_OBG_09-10-2023_Regular_AT301AE23.pdf"],
+
+      ["2022", "Regular",
+       "GNC_OBG_12-09-2022_Regular_AT301AE22.pdf"],
+
+      ["2021", "Regular",
+       "GNC_OBG_13-09-2021_Regular_AT301AE21.pdf"],
+
+      ["2020", "Regular",
+       "GNC_OBG_31-08-2020_Regular_AT301AE20.pdf"],
+
+      ["2019", "Regular",
+       "GNC_OBG_03-09-2019_Regular_AT301AE19.pdf"],
+
+      ["2016", "Regular",
+       "GNC_OBG_28-06-2016_Regular_AT301AE16.pdf"],
+
+      ["2015", "Regular",
+       "GNC_OBG_16-06-2015_Regular_AT301AE15.pdf"],
+
+      ["2025", "Supplementary",
+       "GNC_OBG_10-02-2025_Repeater_AT301SE25.pdf"],
+
+      ["2024", "Supplementary",
+       "GNC_OBG_26-04-2024_Repeater_AT301SE24.pdf"],
+
+      ["2023", "Supplementary",
+       "GNC_OBG_17-04-2023_Repeater_AT301SE23.pdf"],
+
+      ["2022", "Supplementary",
+       "GNC_OBG_28-03-2022_Repeater_AT301SE22.pdf"],
+
+      ["2020", "Supplementary",
+       "GNC_OBG_24-02-2020_Repeater_AT301SE20.pdf"],
+
+      ["2019", "Supplementary",
+       "GNC_OBG_18-02-2019_Repeater_AT301SE19.pdf"],
+
+      ["2018", "Supplementary",
+       "GNC_OBG_30-07-2018_Repeater_AT301SE18.pdf"],
+
+      ["2017", "Supplementary",
+       "GNC_OBG_04-07-2017_Repeater_AT301ER17.pdf"]
+
+    ]
+  }
+
 };
 
 const bsc = document.getElementById("bsc-years");
 const gnm = document.getElementById("gnm-years");
 
-function createSubjectItem(subject) {
+function createSubjectItem(subject, index) {
   return `
     <div class="item">
-      <strong>${subject}</strong>
+      <strong>${index + 1}. ${subject}</strong>
       <span class="pending">PDF Coming Soon</span>
     </div>
   `;
 }
 
-// B.SC. STRUCTURE:
-// B.Sc. Nursing → Semester → Examination Year → Subjects
-
+// B.Sc. Nursing structure
 Object.keys(bscSubjects).forEach((semester) => {
 
   const semesterBox = document.createElement("details");
@@ -336,8 +493,8 @@ Object.keys(bscSubjects).forEach((semester) => {
         <details class="year archive-year">
           <summary>${year}</summary>
           <div class="year-content">
-            ${bscSubjects[semester].map(subject =>
-              createSubjectItem(subject)
+            ${bscSubjects[semester].map((subject, index) =>
+              createSubjectItem(subject, index)
             ).join("")}
           </div>
         </details>
@@ -348,9 +505,7 @@ Object.keys(bscSubjects).forEach((semester) => {
   bsc.appendChild(semesterBox);
 });
 
-// GNM STRUCTURE:
-// GNM Nursing → GNM Year → Examination Year → Subjects
-
+// GNM 1st and 2nd Year
 Object.keys(gnmSubjects).forEach((studyYear) => {
 
   const studyYearBox = document.createElement("details");
@@ -359,62 +514,106 @@ Object.keys(gnmSubjects).forEach((studyYear) => {
   studyYearBox.innerHTML = `
     <summary>${studyYear}</summary>
     <div class="year-content">
-      ${gnmExamYears.map(year => {
-
-        let subjectsHTML = "";
-
-        if (studyYear === "3rd Year") {
-
-          subjectsHTML = `
-            <div class="item">
-              <strong>1. Community Health Nursing – II (CHN-II)</strong>
-              <a class="pdf-link"
-                href="GNC%20CHN-II%20Question%20(2015%E2%80%932026).pdf"
-                target="_blank">
-                Open PDF
-              </a>
-            </div>
-
-            <div class="item">
-              <strong>2. Midwifery and Gynecological Nursing (OBG)</strong>
-              <a class="pdf-link"
-                href="GNC%20obg%20(2015%E2%80%932026).pdf"
-                target="_blank">
-                Open PDF
-              </a>
-            </div>
-          `;
-
-        } else {
-
-          subjectsHTML = gnmSubjects[studyYear]
-            .map((subject, index) => `
-              <div class="item">
-                <strong>${index + 1}. ${subject}</strong>
-                <span class="pending">PDF Coming Soon</span>
-              </div>
-            `).join("");
-
-        }
-
-        return `
-          <details class="year archive-year">
-            <summary>${year}</summary>
-            <div class="year-content">
-              ${subjectsHTML}
-            </div>
-          </details>
-        `;
-
-      }).join("")}
+      ${gnmExamYears.map(year => `
+        <details class="year archive-year">
+          <summary>${year}</summary>
+          <div class="year-content">
+            ${gnmSubjects[studyYear].map((subject, index) =>
+              createSubjectItem(subject, index)
+            ).join("")}
+          </div>
+        </details>
+      `).join("")}
     </div>
   `;
 
   gnm.appendChild(studyYearBox);
 });
 
-// SEARCH
+// Create a PDF button
+function createPDFButton(folder, filename, type) {
 
+  const path = `${folder}/${filename}`;
+
+  const label = type.startsWith("Supplementary")
+    ? type
+    : "Main Exam (Regular)";
+
+  const cssClass = type.startsWith("Supplementary")
+    ? "pdf-link supplementary"
+    : "pdf-link";
+
+  return `
+    <a class="${cssClass}"
+       href="${path}"
+       target="_blank"
+       rel="noopener">
+       ${label} – Open PDF
+    </a>
+  `;
+}
+
+// GNM 3rd Year: Year → Subject → Main / Supplementary
+const thirdYearBox = document.createElement("details");
+thirdYearBox.className = "year course-group";
+
+thirdYearBox.innerHTML = `
+  <summary>3rd Year</summary>
+  <div class="year-content">
+    ${gnmThirdYears.map(year => {
+
+      const chnPapers = paperData["CHN-II"].papers.filter(
+        paper => Number(paper[0]) === year
+      );
+
+      const obgPapers = paperData["OBG"].papers.filter(
+        paper => Number(paper[0]) === year
+      );
+
+      if (!chnPapers.length && !obgPapers.length) {
+        return "";
+      }
+
+      function subjectHTML(subjectName, subjectInfo) {
+
+        if (!subjectInfo.length) return "";
+
+        return `
+          <div class="subject-paper">
+            <strong>${subjectName}</strong>
+            <div class="paper-buttons">
+              ${subjectInfo.map(paper =>
+                createPDFButton(
+                  paperData[subjectName].folder,
+                  paper[2],
+                  paper[1]
+                )
+              ).join("")}
+            </div>
+          </div>
+        `;
+      }
+
+      return `
+        <details class="year archive-year">
+          <summary>${year}</summary>
+          <div class="year-content">
+
+            ${subjectHTML("CHN-II", chnPapers)}
+
+            ${subjectHTML("OBG", obgPapers)}
+
+          </div>
+        </details>
+      `;
+
+    }).join("")}
+  </div>
+`;
+
+gnm.appendChild(thirdYearBox);
+
+// Search
 const search = document.getElementById("chapterSearch");
 const noResults = document.getElementById("noResults");
 
@@ -457,7 +656,6 @@ search.addEventListener("input", function() {
   noResults.hidden = totalMatches !== 0;
 
 });
-
 </script>
 
 </body>
