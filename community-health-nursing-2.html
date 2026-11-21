@@ -126,6 +126,8 @@ body {
   white-space: nowrap;
 }
 
+.pdf-button:hover { background: #06676a; }
+
 .no-results {
   color: #667;
   padding: 12px 0;
@@ -171,7 +173,7 @@ footer {
   <h1>Community Health Nursing – II</h1>
   <p>
     Explore previous-year question papers for Community Health Nursing – II.
-    Select an examination year to find the PDF paper.
+    Select an examination year to open the combined question paper PDF.
   </p>
 </section>
 
@@ -183,6 +185,7 @@ footer {
   id="chapterSearch"
   class="chapter-search"
   placeholder="Search year..."
+  aria-label="Search examination year"
 >
 
 <p id="noResults" class="no-results" hidden>
@@ -215,8 +218,11 @@ years.forEach(year => {
       <div class="item">
         <strong>Community Health Nursing – II</strong>
         <a class="pdf-button"
-href="GNC CHN-II Question (2015–2026).pdf"
-target="_blank">Open PDF</a>
+           href="GNC%20CHN-II%20Question%20(2015%E2%80%932026).pdf"
+           target="_blank"
+           rel="noopener">
+          Open PDF →
+        </a>
       </div>
     </div>
   `;
@@ -228,11 +234,13 @@ const search = document.getElementById("chapterSearch");
 const noResults = document.getElementById("noResults");
 
 search.addEventListener("input", function() {
-  const value = this.value.toLowerCase();
+  const value = this.value.toLowerCase().trim();
   let count = 0;
 
   document.querySelectorAll(".year").forEach(year => {
-    const matches = year.textContent.toLowerCase().includes(value);
+    const matches = year.querySelector("summary").textContent
+      .toLowerCase().includes(value);
+
     year.style.display = matches ? "block" : "none";
 
     if (matches) {
