@@ -1,16 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Old Exam Questions | Nurses Notes</title>
 <link rel="stylesheet" href="style.css">
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -38,10 +36,7 @@ body {
   margin: 10px 0;
 }
 
-.subject-hero p {
-  line-height: 1.7;
-  color: #455;
-}
+.subject-hero p { color: #455; }
 
 .back-link {
   display: inline-block;
@@ -76,22 +71,20 @@ body {
 .year {
   border: 1px solid #e5eeee;
   border-radius: 12px;
-  margin: 14px 0;
+  margin: 12px 0;
   overflow: hidden;
 }
 
 .year summary {
   background: #eaf5f5;
   color: #087f83;
-  padding: 16px;
+  padding: 15px;
   font-weight: bold;
   cursor: pointer;
   list-style-position: inside;
 }
 
-.year-content {
-  padding: 14px;
-}
+.year-content { padding: 12px; }
 
 .item {
   display: flex;
@@ -100,14 +93,12 @@ body {
   gap: 12px;
   background: #f7fafa;
   border: 1px solid #edf2f2;
-  padding: 14px;
-  margin: 10px 0;
+  padding: 13px;
+  margin: 9px 0;
   border-radius: 9px;
 }
 
-.item strong {
-  color: #234;
-}
+.item strong { color: #234; }
 
 .pending {
   display: inline-block;
@@ -117,6 +108,21 @@ body {
   border-radius: 7px;
   font-size: 13px;
   white-space: nowrap;
+}
+
+.pdf-link {
+  display: inline-block;
+  background: #087f83;
+  color: white;
+  text-decoration: none;
+  padding: 8px 13px;
+  border-radius: 7px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.pdf-link:hover, .pending:hover {
+  opacity: .85;
 }
 
 .no-results {
@@ -130,13 +136,8 @@ body {
     padding: 12px;
   }
 
-  .subject-hero {
-    padding: 22px;
-  }
-
-  .content-section {
-    padding: 16px;
-  }
+  .subject-hero { padding: 22px; }
+  .content-section { padding: 16px; }
 
   .item {
     align-items: flex-start;
@@ -145,16 +146,11 @@ body {
 }
 
 @media print {
-  .topbar,
-  .back-link,
-  .chapter-search,
-  footer {
+  .topbar, .back-link, .chapter-search, footer {
     display: none !important;
   }
 
-  body {
-    background: white;
-  }
+  body { background: white; }
 
   .subject-page {
     margin: 0;
@@ -189,29 +185,34 @@ body {
   <h1>Old Exam Questions</h1>
   <p>
     Prepare for nursing examinations with previous-year question
-    papers. Explore examination years, semesters and GNM courses.
+    papers. Select your course, semester or year, examination year
+    and subject.
   </p>
 </section>
 
 <h2>Find Previous Year Papers</h2>
-<p>Search by year, course or semester.</p>
+<p>Search by course, semester, year or subject.</p>
 
 <input
   type="search"
   id="chapterSearch"
   class="chapter-search"
-  placeholder="Search year, semester or course..."
+  placeholder="Search year, semester or subject..."
 >
 
 <p id="noResults" class="no-results" hidden>
   No matching examination papers found.
 </p>
 
+<!-- B.SC. NURSING -->
+
 <section class="content-section">
   <h2>B.Sc. Nursing</h2>
   <p>Gujarat University</p>
   <div id="bsc-years"></div>
 </section>
+
+<!-- GNM NURSING -->
 
 <section class="content-section">
   <h2>GNM Nursing</h2>
@@ -228,68 +229,234 @@ body {
 </footer>
 
 <script>
-const years = [2019,2020,2021,2022,2023,2024,2025,2026];
+const bscExamYears = [
+  2019, 2020, 2021, 2022,
+  2023, 2024, 2025, 2026
+];
+
+const gnmExamYears = [
+  2016, 2017, 2018, 2019, 2020,
+  2021, 2022, 2023, 2024, 2025, 2026
+];
+
+const bscSubjects = {
+  1: [
+    "General Science (Refresher)",
+    "Communicative English",
+    "Applied Anatomy & Physiology",
+    "Applied Sociology & Psychology",
+    "Nursing Foundations I"
+  ],
+  2: [
+    "Applied Biochemistry",
+    "Applied Nutrition & Dietetics",
+    "Nursing Foundations II",
+    "Introduction to Community Health Nursing"
+  ],
+  3: [
+    "Applied Microbiology & Infection Control",
+    "Pharmacology I",
+    "Pathology I",
+    "Adult Health Nursing I (Medical-Surgical)",
+    "Professionalism, Ethics & Bioethics"
+  ],
+  4: [
+    "Pharmacology II",
+    "Pathology II & Genetics",
+    "Adult Health Nursing II",
+    "Educational Technology / Nursing Education"
+  ],
+  5: [
+    "Child Health Nursing I",
+    "Mental Health Nursing I",
+    "Nursing Management & Leadership",
+    "Nursing Research & Statistics",
+    "Health/Nursing Informatics & Technology",
+    "Forensic Nursing & Indian Laws"
+  ],
+  6: [
+    "Child Health Nursing II",
+    "Mental Health Nursing II",
+    "Community Health Nursing I",
+    "Midwifery / OBG Nursing I"
+  ],
+  7: [
+    "Community Health Nursing II",
+    "Midwifery / OBG Nursing II",
+    "Internship / Residency"
+  ],
+  8: [
+    "Internship (Intensive Practicum / Residency Posting)"
+  ]
+};
+
+const gnmSubjects = {
+  "1st Year": [
+    "Behavioral Sciences",
+    "Nursing Foundations",
+    "Community Health Nursing – I"
+  ],
+  "2nd Year": [
+    "Medical-Surgical Nursing I",
+    "Medical-Surgical Nursing II",
+    "Mental Health Nursing",
+    "Child Health Nursing"
+  ],
+  "3rd Year": [
+    "Community Health Nursing – II (CHN-II)",
+    "Midwifery and Gynecological Nursing (OBG)"
+  ]
+};
 
 const bsc = document.getElementById("bsc-years");
 const gnm = document.getElementById("gnm-years");
 
-years.forEach((year) => {
+function createSubjectItem(subject) {
+  return `
+    <div class="item">
+      <strong>${subject}</strong>
+      <span class="pending">PDF Coming Soon</span>
+    </div>
+  `;
+}
 
-  const bscYear = document.createElement("details");
-  bscYear.className = "year";
+// B.SC. STRUCTURE:
+// B.Sc. Nursing → Semester → Examination Year → Subjects
 
-  bscYear.innerHTML = `
-    <summary>${year}</summary>
+Object.keys(bscSubjects).forEach((semester) => {
+
+  const semesterBox = document.createElement("details");
+  semesterBox.className = "year course-group";
+
+  semesterBox.innerHTML = `
+    <summary>Semester ${semester}</summary>
     <div class="year-content">
-      ${[1,2,3,4,5,6,7,8].map((sem) => `
-        <div class="item">
-          <strong>Semester ${sem}</strong>
-          <span class="pending">PDF Coming Soon</span>
-        </div>
+      ${bscExamYears.map(year => `
+        <details class="year archive-year">
+          <summary>${year}</summary>
+          <div class="year-content">
+            ${bscSubjects[semester].map(subject =>
+              createSubjectItem(subject)
+            ).join("")}
+          </div>
+        </details>
       `).join("")}
     </div>
   `;
 
-  bsc.appendChild(bscYear);
-
-  const gnmYear = document.createElement("details");
-  gnmYear.className = "year";
-
-  gnmYear.innerHTML = `
-    <summary>${year}</summary>
-    <div class="year-content">
-      ${["1st Year","2nd Year","3rd Year"].map((name) => `
-        <div class="item">
-          <strong>${name}</strong>
-          <span class="pending">PDF Coming Soon</span>
-        </div>
-      `).join("")}
-    </div>
-  `;
-
-  gnm.appendChild(gnmYear);
+  bsc.appendChild(semesterBox);
 });
+
+// GNM STRUCTURE:
+// GNM Nursing → GNM Year → Examination Year → Subjects
+
+Object.keys(gnmSubjects).forEach((studyYear) => {
+
+  const studyYearBox = document.createElement("details");
+  studyYearBox.className = "year course-group";
+
+  studyYearBox.innerHTML = `
+    <summary>${studyYear}</summary>
+    <div class="year-content">
+      ${gnmExamYears.map(year => {
+
+        let subjectsHTML = "";
+
+        if (studyYear === "3rd Year") {
+
+          subjectsHTML = `
+            <div class="item">
+              <strong>1. Community Health Nursing – II (CHN-II)</strong>
+              <a class="pdf-link"
+                href="GNC%20CHN-II%20Question%20(2015%E2%80%932026).pdf"
+                target="_blank">
+                Open PDF
+              </a>
+            </div>
+
+            <div class="item">
+              <strong>2. Midwifery and Gynecological Nursing (OBG)</strong>
+              <a class="pdf-link"
+                href="GNC%20obg%20(2015%E2%80%932026).pdf"
+                target="_blank">
+                Open PDF
+              </a>
+            </div>
+          `;
+
+        } else {
+
+          subjectsHTML = gnmSubjects[studyYear]
+            .map((subject, index) => `
+              <div class="item">
+                <strong>${index + 1}. ${subject}</strong>
+                <span class="pending">PDF Coming Soon</span>
+              </div>
+            `).join("");
+
+        }
+
+        return `
+          <details class="year archive-year">
+            <summary>${year}</summary>
+            <div class="year-content">
+              ${subjectsHTML}
+            </div>
+          </details>
+        `;
+
+      }).join("")}
+    </div>
+  `;
+
+  gnm.appendChild(studyYearBox);
+});
+
+// SEARCH
 
 const search = document.getElementById("chapterSearch");
 const noResults = document.getElementById("noResults");
 
 search.addEventListener("input", function() {
-  const value = this.value.toLowerCase();
-  let count = 0;
 
-  document.querySelectorAll(".year").forEach(year => {
-    const matches = year.textContent.toLowerCase().includes(value);
+  const value = this.value.trim().toLowerCase();
+  let totalMatches = 0;
 
-    year.style.display = matches ? "block" : "none";
+  document.querySelectorAll(".archive-year").forEach(item => {
+
+    const matches = item.textContent.toLowerCase().includes(value);
+
+    item.style.display = matches ? "block" : "none";
 
     if (matches) {
-      count++;
-      if (value) year.open = true;
+      totalMatches++;
+      if (value) item.open = true;
+    } else {
+      item.open = false;
     }
+
   });
 
-  noResults.hidden = count !== 0;
+  document.querySelectorAll(".course-group").forEach(group => {
+
+    const visibleYears = group.querySelectorAll(
+      ".archive-year:not([style*='display: none'])"
+    ).length;
+
+    group.style.display = visibleYears > 0 ? "block" : "none";
+
+    if (value && visibleYears > 0) {
+      group.open = true;
+    } else if (!value) {
+      group.open = false;
+    }
+
+  });
+
+  noResults.hidden = totalMatches !== 0;
+
 });
+
 </script>
 
 </body>
