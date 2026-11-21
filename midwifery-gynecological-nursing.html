@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Midwifery and Gynecological Nursing | Nurses Notes</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7fafa;
+  color: #263449;
+  line-height: 1.6;
+}
+
+.subject-page {
+  max-width: 1100px;
+  margin: 35px auto;
+  padding: 20px;
+}
+
+.topbar {
+  background: white;
+  padding: 15px 6%;
+  border-bottom: 1px solid #e5eeee;
+}
+
+.brand {
+  color: #087f83;
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.brandmark { font-size: 25px; }
+
+.brand small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #687878;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #087f83;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.subject-hero {
+  background: #eaf5f5;
+  padding: 35px;
+  border-radius: 18px;
+  margin-bottom: 30px;
+}
+
+.subject-hero h1 {
+  color: #087f83;
+  margin: 10px 0;
+}
+
+.subject-hero p { color: #455; }
+
+.chapter-search {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 15px 0 25px;
+  font-size: 16px;
+}
+
+.content-section {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid #e5eeee;
+}
+
+.content-section h2 { color: #087f83; }
+
+.year {
+  border: 1px solid #e5eeee;
+  border-radius: 12px;
+  margin: 14px 0;
+  overflow: hidden;
+}
+
+.year summary {
+  background: #eaf5f5;
+  color: #087f83;
+  padding: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.year-content { padding: 14px; }
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: #f7fafa;
+  border: 1px solid #edf2f2;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 9px;
+}
+
+.pdf-button {
+  display: inline-block;
+  background: #087f83;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 7px;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.no-results {
+  color: #667;
+  padding: 12px 0;
+}
+
+footer {
+  text-align: center;
+  color: #718080;
+  padding: 30px 15px;
+  font-size: 13px;
+}
+
+@media(max-width:600px) {
+  .subject-page { padding: 12px; }
+  .subject-hero { padding: 22px; }
+  .content-section { padding: 16px; }
+  .item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <span class="brandmark">✚</span>
+    Nurses Notes
+    <small>LEARN • PRACTISE • GROW</small>
+  </a>
+</header>
+
+<main class="subject-page">
+
+<a href="gnm-3rd-year.html" class="back-link">
+← Back to GNM 3rd Year
+</a>
+
+<section class="subject-hero">
+  <span>GNM • THIRD YEAR</span>
+  <h1>Midwifery and Gynecological Nursing</h1>
+  <p>
+    Explore previous-year question papers for Midwifery and
+    Gynecological Nursing. Select an examination year to find the PDF paper.
+  </p>
+</section>
+
+<h2>Previous Year Question Papers</h2>
+<p>Search by examination year.</p>
+
+<input
+  type="search"
+  id="chapterSearch"
+  class="chapter-search"
+  placeholder="Search year..."
+>
+
+<p id="noResults" class="no-results" hidden>
+No matching examination papers found.
+</p>
+
+<section class="content-section">
+  <h2>Gujarat Nursing Council</h2>
+  <div id="years-container"></div>
+</section>
+
+</main>
+
+<footer>
+© 2026 Nurses Notes. Learn responsibly. Care compassionately.
+</footer>
+
+<script>
+const years = [2019,2020,2021,2022,2023,2024,2025,2026];
+
+const container = document.getElementById("years-container");
+
+years.forEach(year => {
+  const details = document.createElement("details");
+  details.className = "year";
+
+  details.innerHTML = `
+    <summary>${year}</summary>
+    <div class="year-content">
+      <div class="item">
+        <strong>Midwifery and Gynecological Nursing</strong>
+        <span class="pdf-button">PDF Coming Soon</span>
+      </div>
+    </div>
+  `;
+
+  container.appendChild(details);
+});
+
+const search = document.getElementById("chapterSearch");
+const noResults = document.getElementById("noResults");
+
+search.addEventListener("input", function() {
+  const value = this.value.toLowerCase();
+  let count = 0;
+
+  document.querySelectorAll(".year").forEach(year => {
+    const matches = year.textContent.toLowerCase().includes(value);
+    year.style.display = matches ? "block" : "none";
+
+    if (matches) {
+      count++;
+      if (value) year.open = true;
+    }
+  });
+
+  noResults.hidden = count !== 0;
+});
+</script>
+
+</body>
+</html>
